@@ -2,3 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
+.hamburger {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    transition: all 0.25s;
+    position: relative;
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+    position: absolute;
+    width: 24px;
+    height: 3px;
+    top: 0;
+    left: 0;
+    background: hsla(197.095, 100%, 35%, 1);
+    transform: rotate(0);
+    transition: all 0.5s;
+}
+
+
+.hamburger-top:hover {
+    background-color: hsla(204.375, 100%, 19%, 1);
+}
+
+.hamburger-middle {
+    transform: translateY(7px);
+}
+.hamburger-middle:hover {
+    background-color: hsla(204.375, 100%, 19%, 1);
+}
+
+.hamburger-bottom {
+    transform: translateY(14px);
+}
+
+.hamburger-bottom:hover {
+    background-color: hsla(204.375, 100%, 19%, 1);
+}
+

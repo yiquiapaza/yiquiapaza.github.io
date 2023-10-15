@@ -8,6 +8,7 @@
         "build": "astro build",
         "preview": "astro preview",
         "astro": "astro",
+        "watch": "tailwindcss -i ./style/base.css -o ./public/css/style.css",
         "prettier": "npx prettier --write .",
         "format": "npx prettier --write ."
     },
