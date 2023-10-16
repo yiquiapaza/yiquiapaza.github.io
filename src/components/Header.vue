@@ -3,20 +3,20 @@
         <nav class="container relative mx-auto p-6">
             <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-20">
-                    <img src="/yhonatan.svg" alt="" />
+                    <img src="/images/yhonatan.svg" alt="" />
                     <div class="hidden space-x-8 text-lg md:flex">
                         <a
-                            href="#"
+                            href="/"
                             class="font-poppins text-palermo2 hover:text-palermo5"
                             >Home</a
                         >
                         <a
-                            href="#"
+                            href="/publications/"
                             class="font-poppins text-palermo2 hover:text-palermo5"
                             >Publications</a
                         >
                         <a
-                            href="#"
+                            href="/projects/"
                             class="font-poppins text-palermo2 hover:text-palermo5"
                             >Projects</a
                         >
@@ -38,7 +38,7 @@
                         <span class="hamburger-bottom"></span>
                     </button>
                 </div>
-                <hamburger-menu></hamburger-menu>
+                <HamburgerMenu />
             </div>
         </nav>
     </div>

@@ -23,23 +23,28 @@
     transition: all 0.5s;
 }
 
-
-.hamburger-top:hover {
-    background-color: hsla(204.375, 100%, 19%, 1);
-}
-
 .hamburger-middle {
     transform: translateY(7px);
-}
-.hamburger-middle:hover {
-    background-color: hsla(204.375, 100%, 19%, 1);
 }
 
 .hamburger-bottom {
     transform: translateY(14px);
 }
 
-.hamburger-bottom:hover {
+.open {
+    transform: rotate(90deg);
+}
+
+.open .hamburger-top {
+    transform: rotate(45deg) translateY(6px) translateX(6px);
     background-color: hsla(204.375, 100%, 19%, 1);
 }
 
+.open .hamburger-middle {
+    display: none;
+}
+
+.open .hamburger-bottom {
+    transform: rotate(-45deg) translateY(6px) translateX(-6px);
+    background-color: hsla(204.375, 100%, 19%, 1);
+}
