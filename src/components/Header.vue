@@ -7,17 +7,20 @@
                     <div class="hidden space-x-8 text-lg md:flex">
                         <a
                             href="/"
-                            class="font-poppins text-palermo2 hover:text-palermo5"
+                            class="font-poppins"
+                            :style="{ color: stylesNav.home }"
                             >Home</a
                         >
                         <a
                             href="/publications/"
-                            class="font-poppins text-palermo2 hover:text-palermo5"
+                            class="font-poppins"
+                            :style="{ color: stylesNav.publications }"
                             >Publications</a
                         >
                         <a
                             href="/projects/"
-                            class="font-poppins text-palermo2 hover:text-palermo5"
+                            class="font-poppins"
+                            :style="{ color: stylesNav.projects }"
                             >Projects</a
                         >
                         <a
@@ -38,13 +41,39 @@
                         <span class="hamburger-bottom"></span>
                     </button>
                 </div>
-                <HamburgerMenu />
+                <HamburgerMenu :url-name="navName" />
             </div>
         </nav>
+        <h1>{{ navName }}</h1>
     </div>
 </template>
 <script setup lang="ts">
 import HamburgerMenu from './HamburgerMenu.vue';
 
-//TODO: Create script for hamburger menu when is open change color and create card
+import { defineProps, reactive } from 'vue';
+
+const props = defineProps({ navName: { type: String, required: true } });
+const stylesNav = reactive({
+    home: '',
+    publications: '',
+    projects: '',
+});
+const changeColor = () => {
+    if (props.navName === 'home') {
+        stylesNav.home = 'hsla(204.375, 100%, 19%, 1)';
+        stylesNav.publications = 'hsla(197.095, 100%, 35%, 1)';
+        stylesNav.projects = 'hsla(197.095, 100%, 35%, 1)';
+    }
+    if (props.navName === 'publications') {
+        stylesNav.home = 'hsla(197.095, 100%, 35%, 1)';
+        stylesNav.publications = 'hsla(204.375, 100%, 19%, 1)';
+        stylesNav.projects = 'hsla(197.095, 100%, 35%, 1)';
+    }
+    if (props.navName === 'projects') {
+        stylesNav.home = 'hsla(197.095, 100%, 35%, 1)';
+        stylesNav.publications = 'hsla(197.095, 100%, 35%, 1)';
+        stylesNav.projects = 'hsla(204.375, 100%, 19%, 1)';
+    }
+};
+changeColor();
 </script>
