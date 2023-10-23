@@ -1,10 +1,14 @@
 <template>
-    <div class="container mx-auto max-w-6xl px-6 py-12">
+    <div class="container mx-auto max-w-6xl px-6 py-6">
         <nav class="container relative mx-auto p-6">
             <div class="flex items-center justify-between">
-                <div class="flex items-center space-x-20">
-                    <img src="/images/yhonatan.svg" alt="" />
-                    <div class="hidden space-x-8 text-lg md:flex">
+                <div
+                    class="flex flex-col items-center space-x-2.5 md:flex-row md:space-x-20"
+                >
+                    <img src="/images/yhonatan.svg" alt="My name" />
+                    <div
+                        class="space-x-4 py-10 text-base md:w-full md:p-0 md:text-xl"
+                    >
                         <a
                             href="/"
                             class="font-poppins"
@@ -30,27 +34,12 @@
                         >
                     </div>
                 </div>
-                <div class="right-0 top-0 md:hidden">
-                    <button
-                        id="menu-btn"
-                        type="button"
-                        class="hamburger z-40 block focus:outline-none md:hidden"
-                    >
-                        <span class="hamburger-top"></span>
-                        <span class="hamburger-middle"></span>
-                        <span class="hamburger-bottom"></span>
-                    </button>
-                </div>
-                <HamburgerMenu :url-name="navName" />
             </div>
         </nav>
-        <h1>{{ navName }}</h1>
     </div>
 </template>
 <script setup lang="ts">
-import HamburgerMenu from './HamburgerMenu.vue';
-
-import { defineProps, reactive } from 'vue';
+import { reactive } from 'vue';
 
 const props = defineProps({ navName: { type: String, required: true } });
 const stylesNav = reactive({
