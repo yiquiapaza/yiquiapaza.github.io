@@ -1,0 +1,64 @@
+---
+const { headerName } = Astro.props;
+const headerNames = [
+    { name: 'home', isActive: false },
+    { name: 'publications', isActive: false },
+    { name: 'projects', isActive: false },
+];
+headerNames.map((item) => {
+    if (headerName === item.name) item.isActive = true;
+    return item;
+});
+---
+
+<div class="container mx-auto max-w-6xl px-6 py-6">
+    <nav class="container relative mx-auto p-6">
+        <div
+            class="flex flex-col items-center space-x-2.5 md:flex-row md:space-x-20"
+        >
+            <img src="/images/yhonatan.svg" alt="Yhonatan" />
+                                                                                                                                                                                                            <div class="space-x-4 py-10 text-sm md:w-full md:p-0 md:text-xl">
+                <a
+                    href="/"
+                    class:list={[
+                        'font-poppins text-palermo2 hover:text-palermo5',
+                        { isActive: headerNames[0].isActive },
+                    ]}
+                >
+                    Home</a
+                >
+                <a
+                    href="/publications"
+                    class:list={[
+                        'font-poppins text-palermo2 hover:text-palermo5',
+                        { isActive: headerNames[1].isActive },
+                    ]}
+                >
+                    Publications</a
+                >
+                <a
+                    href="/projects"
+                    class:list={[
+                        'font-poppins text-palermo2 hover:text-palermo5',
+                        { isActive: headerNames[2].isActive },
+                    ]}
+                >
+                    Projects</a
+                >
+                <!--TODO: change personal drive resume url-->
+                <a
+                    href="/cv"
+                    class="font-poppins text-palermo2 hover:text-palermo5"
+                >
+                    Resume</a
+                >
+            </div>
+        </div>
+    </nav>
+</div>
+
+<style>
+    .isActive {
+        color: hsla(204.375, 100%, 19%, 1);
+    }
+</style>

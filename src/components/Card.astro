@@ -1,0 +1,32 @@
+---
+import { Image } from 'astro:assets';
+import template from '../../public/images/template.jpg';
+---
+<!--TODO: create fotter card and import data-->
+<div class="mx-auto max-w-sm overflow-hidden rounded-xl shadow-md md:max-w-6xl">
+    <div class="md:flex">
+        <div class="md:shrink-0">
+            <Image
+                src={template}
+                alt="Example"
+                class="h-48 w-full object-cover md:h-full md:w-48"
+            />
+        </div>
+        <div class="p-8">
+            <div
+                class="text-sm font-semibold uppercase tracking-wide text-indigo-500"
+            >
+                Company retreats
+            </div>
+            <h1
+                class="mt-1 block text-lg font-medium leading-tight text-black"
+                >Incredible accommodation for your team</h1
+            >
+            <p class="mt-2 text-slate-500">
+                Looking to take your team away on a retreat to enjoy awesome
+                food and take in some sunshine? We have a list of places to do
+                just that.
+            </p>
+        </div>
+    </div>
+</div>

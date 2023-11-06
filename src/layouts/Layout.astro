@@ -1,5 +1,5 @@
 ---
-import Header from '../components/Header.vue';
+import Header from '../components/Header.astro';
 import Footer from '../components/Footer.vue';
 import { ViewTransitions } from 'astro:transitions';
 interface Props {
@@ -30,7 +30,7 @@ const { title, page } = Astro.props;
     </head>
     <body>
         <main class="min-h-screen flex flex-col justify-between">
-            <Header nav-name={page} />
+            <Header headerName={page} />
             <slot />
             <Footer />
         </main>
