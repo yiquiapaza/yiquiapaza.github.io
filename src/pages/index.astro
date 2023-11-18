@@ -1,13 +1,14 @@
 ---
+import Publications from '../data/publications.json';
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro'
+import Card from '../components/Card.astro';
 ---
 
 <Layout title="Yhonatan|Home" page="home">
     <section>
         <div class="container">
             <div class="flex flex-col md:flex-col">
-                <div class="px-6 container mx-auto mt-16">
+                <div class="container mx-auto mt-16 px-6">
                     <p class="mx-auto max-w-md text-justify">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                         sed do eiusmod tempor incididunt ut labore et dolore
@@ -31,5 +32,15 @@ import Card from '../components/Card.astro'
             </div>
         </div>
     </section>
-    <Card />
+    <Card
+        title={Publications[0].title}
+        event={Publications[0].event}
+        authors={Publications[0].authors}
+        image={Publications[0].image}
+        year={Publications[0].year}
+        doi={Publications[0].doi}
+        url={Publications[0].url}
+        pdf={Publications[0].pdf}
+        video={Publications[0].video}
+    />
 </Layout>

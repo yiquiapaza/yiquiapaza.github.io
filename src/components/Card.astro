@@ -1,8 +1,14 @@
 ---
 import { Image } from 'astro:assets';
 import template from '../../public/images/template.jpg';
+import doiImg from '../../public/icons/doi.png'
+import pdfImg from '../../public/icons/pdf.png'
+import urlImg from '../../public/icons/address.png'
+import videoImg from '../../public/icons/video.png'
+const { title, event, authors } = Astro.props;
 ---
-<!--TODO: create fotter card and import data-->
+
+<!--TODO: create a new footer, and card and import data-->
 <div class="mx-auto max-w-sm overflow-hidden rounded-xl shadow-md md:max-w-6xl">
     <div class="md:flex">
         <div class="md:shrink-0">
@@ -14,19 +20,44 @@ import template from '../../public/images/template.jpg';
         </div>
         <div class="p-8">
             <div
-                class="text-sm font-semibold uppercase tracking-wide text-indigo-500"
+                class="text-sm font-semibold uppercase tracking-wide text-palermo4 md:text-lg"
             >
-                Company retreats
+                {title}
             </div>
             <h1
-                class="mt-1 block text-lg font-medium leading-tight text-black"
-                >Incredible accommodation for your team</h1
+                class="mt-1 block text-sm font-medium leading-tight text-palermo2 md:text-lg"
             >
+                {event}
+            </h1>
+            <h2
+                class="md:test-md mt-1 block text-sm leading-tight text-black"
+            >
+                {authors}
+            </h2>
             <p class="mt-2 text-slate-500">
                 Looking to take your team away on a retreat to enjoy awesome
                 food and take in some sunshine? We have a list of places to do
                 just that.
             </p>
+            <div class="flex flex-row">
+                <Image
+                    src={doiImg}
+                    alt="DOI"
+                />
+                <Image
+                  src={pdfImg}
+                  alt="DOI"
+                />
+                <Image
+                  src={urlImg}
+                  alt="DOI"
+                />
+                <Image
+                  src={videoImg}
+                  alt="DOI"
+                />
+
+            </div>
         </div>
     </div>
 </div>
