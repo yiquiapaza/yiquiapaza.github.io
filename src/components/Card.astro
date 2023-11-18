@@ -1,15 +1,15 @@
 ---
 import { Image } from 'astro:assets';
 import template from '../../public/images/template.jpg';
-import doiImg from '../../public/icons/doi.png'
-import pdfImg from '../../public/icons/pdf.png'
-import urlImg from '../../public/icons/address.png'
-import videoImg from '../../public/icons/video.png'
-const { title, event, authors } = Astro.props;
+import doiImg from '../../public/icons/doi.png';
+import pdfImg from '../../public/icons/pdf.png';
+import urlImg from '../../public/icons/address.png';
+import videoImg from '../../public/icons/video.png';
+const { title, event, authors, doi, pdf, url, video, year } = Astro.props;
 ---
 
 <!--TODO: create a new footer, and card and import data-->
-<div class="mx-auto max-w-sm overflow-hidden rounded-xl shadow-md md:max-w-6xl">
+<div class="mx-auto max-w-sm overflow-hidden rounded-xl shadow-md md:max-w-6xl mt-6 mb-6">
     <div class="md:flex">
         <div class="md:shrink-0">
             <Image
@@ -27,36 +27,50 @@ const { title, event, authors } = Astro.props;
             <h1
                 class="mt-1 block text-sm font-medium leading-tight text-palermo2 md:text-lg"
             >
-                {event}
+                {event} - {year}
             </h1>
-            <h2
-                class="md:test-md mt-1 block text-sm leading-tight text-black"
-            >
-                {authors}
+            <h2 class="md:test-md mt-1 block text-sm leading-tight text-black">
+                {
+                    authors.map((author) =>
+                        author === 'Yhonatan Iquiapaza' ? (
+                          <span class="px-2"><strong>{author}</strong></span>
+                        ) : (
+                            <span class="px-2">{author}</span>
+                        ),
+                    )
+                }
             </h2>
-            <p class="mt-2 text-slate-500">
+            <p class="mt-2 hidden text-slate-500">
                 Looking to take your team away on a retreat to enjoy awesome
                 food and take in some sunshine? We have a list of places to do
                 just that.
             </p>
             <div class="flex flex-row">
-                <Image
-                    src={doiImg}
-                    alt="DOI"
-                />
-                <Image
-                  src={pdfImg}
-                  alt="DOI"
-                />
-                <Image
-                  src={urlImg}
-                  alt="DOI"
-                />
-                <Image
-                  src={videoImg}
-                  alt="DOI"
-                />
-
+                <span class="p-4">
+                    <a href={doi} target="_blank">
+                        <Image src={doiImg} alt="DOI" width="24" height="24" />
+                    </a>
+                </span>
+                <span class="p-4">
+                    <a href={pdf} target="_blank">
+                        <Image src={pdfImg} alt="DOI" width="24" height="24" />
+                    </a>
+                </span>
+                <span class="p-4">
+                    <a href={url} target="_blank">
+                        <Image src={urlImg} alt="DOI" width="24" height="24" />
+                    </a>
+                </span>
+                <span class="px-4 py-5">
+                    <a href={video} target="_blank">
+                        <Image
+                            src={videoImg}
+                            alt="DOI"
+                            width="24"
+                            height="32"
+                        />
+                    </a>
+                </span>
             </div>
         </div>
     </div>

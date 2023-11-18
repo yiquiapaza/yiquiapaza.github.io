@@ -1,6 +1,25 @@
 ---
+import Publications from '../data/publications.json';
 import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
 ---
 
 <Layout title="Yhonatan|Publications" page="publications">
+    <section>
+        {
+            Publications.map((publication) => (
+                <Card
+                    title={publication.title}
+                    event={publication.event}
+                    authors={publication.authors}
+                    image={publication.image}
+                    year={publication.year}
+                    doi={publication.doi}
+                    url={publication.url}
+                    pdf={publication.pdf}
+                    video={publication.video}
+                />
+            ))
+        }
+    </section>
 </Layout>
