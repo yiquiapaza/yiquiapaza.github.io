@@ -2,19 +2,22 @@
 import Publications from '../data/publications.json';
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
-import { Image } from 'astro:assets';
 
-import image1 from '../../public/publications/1.png';
-import image2 from '../../public/publications/2.png';
-import image3 from '../../public/publications/3.png';
-import image4 from '../../public/publications/4.png';
-import image5 from '../../public/publications/5.png';
-import image6 from '../../public/publications/6.png';
+import image1 from '/public/publications/1.png';
+import image2 from '/public/publications/2.png';
+import image3 from '/public/publications/3.png';
+import image4 from '/public/publications/4.png';
+import image5 from '/public/publications/5.png';
+import image6 from '/public/publications/6.png';
 
 const images = [image6, image5, image4, image3, image2, image1];
 ---
 
-<Layout title="Yhonatan|Publications" page="publications">
+<Layout
+    title="Yhonatan|Publications"
+    page="publications"
+    transition:animate="slide"
+>
     <section>
         {
             Publications.map((publication, index) => (

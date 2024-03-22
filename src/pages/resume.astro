@@ -1,0 +1,17 @@
+---
+import Layout from '../layouts/Layout.astro';
+import resume from '/pdf/resume.pdf';
+---
+
+<Layout title="Yhonatan|Resumen" page="resumen" transition:animate="slide">
+    <section>
+        <div class="flex w-full flex-col items-center">
+            <embed
+                class="w-2/3"
+                src={resume}
+                height="700"
+                type="application/pdf"
+            />
+        </div>
+    </section>
+</Layout>

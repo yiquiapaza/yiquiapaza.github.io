@@ -4,6 +4,7 @@ const headerNames = [
     { name: 'home', isActive: false },
     { name: 'publications', isActive: false },
     { name: 'projects', isActive: false },
+    { name: 'resume', isActive: false },
 ];
 headerNames.map((item) => {
     if (headerName === item.name) item.isActive = true;
@@ -17,7 +18,7 @@ headerNames.map((item) => {
             class="flex flex-col items-center space-x-2.5 md:flex-row md:space-x-20"
         >
             <img src="/images/yhonatan.svg" alt="Yhonatan" />
-                                                                                                                                                                                                            <div class="space-x-4 py-10 text-sm md:w-full md:p-0 md:text-xl">
+            <div class="space-x-4 py-10 text-sm md:w-full md:p-0 md:text-xl">
                 <a
                     href="/"
                     class:list={[
@@ -47,8 +48,11 @@ headerNames.map((item) => {
                 >
                 <!--TODO: change personal drive resume url-->
                 <a
-                    href="/cv"
-                    class="font-poppins text-palermo2 hover:text-palermo5"
+                    href="/resume"
+                    class:list={[
+                        'font-poppins text-palermo2 hover:text-palermo5',
+                        { isActive: headerNames[3].isActive },
+                    ]}
                 >
                     Resume</a
                 >

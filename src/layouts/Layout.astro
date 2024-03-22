@@ -16,7 +16,6 @@ const { title, page } = Astro.props;
         <meta name="description" content="Astro description" />
         <meta name="viewport" content="width=device-width" />
 
-        <ViewTransitions />
         <link rel="icon" type="image/x-icon" href="/images/aricon.png" />
         <meta name="generator" content={Astro.generator} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -27,6 +26,7 @@ const { title, page } = Astro.props;
         />
         <link href="/css/style.css" rel="stylesheet" />
         <title>{title}</title>
+        <ViewTransitions />
     </head>
     <body>
         <main class="min-h-screen flex flex-col justify-between">
