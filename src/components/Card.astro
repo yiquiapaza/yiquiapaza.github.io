@@ -10,7 +10,7 @@ const { title, event, authors, doi, pdf, url, video, year, image } =
 
 <!--TODO: Refactor when I will have more that ten articles-->
 <div
-    class="mx-auto mb-6 mt-6 max-w-sm overflow-hidden rounded-xl shadow-md md:max-w-6xl"
+    class="light:bg-background-primary mx-auto mb-6 mt-6 max-w-sm overflow-hidden rounded-xl shadow-md dark:bg-background-primary md:max-w-6xl"
 >
     <div class="md:flex">
         <div class="md:shrink-0">
@@ -26,12 +26,12 @@ const { title, event, authors, doi, pdf, url, video, year, image } =
         </div>
         <div class="p-8">
             <div
-                class="text-sm font-semibold uppercase tracking-wide text-palermo4 md:text-lg"
+                class="text-palermo4 text-sm font-semibold uppercase tracking-wide md:text-lg"
             >
                 {title}
             </div>
             <h1
-                class="mt-1 block text-sm font-medium leading-tight text-palermo2 md:text-lg"
+                class="text-palermo2 mt-1 block text-sm font-medium leading-tight md:text-lg"
             >
                 {event} - {year}
             </h1>

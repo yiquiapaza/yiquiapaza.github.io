@@ -1,17 +1,25 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
     content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+    darkMode: 'class',
     theme: {
         extend: {
             colors: {
-                palermo1: 'hsla(135, 9%, 91%, 1)',
-                palermo2: 'hsla(197.095, 100%, 35%, 1)',
-                palermo3: 'hsla(358.343, 100%, 65%, 1)',
-                palermo4: 'hsla(359.333, 37%, 48%, 1)',
-                palermo5: 'hsla(204.375, 100%, 19%, 1)',
+                'text': 'var(--text)',
+                'background': 'var(--background)',
+                'primary': 'var(--primary)',
+                'secondary': 'var(--secondary)',
+                'accent': 'var(--accent)',
+                'background-primary': 'var(--background-primary)',
+                'background-secondary': 'var(--background-secondary)',
+                'background-footer': 'var(--background-footer)',
             },
             fontFamily: {
-                sans: ['Poppins', 'sans-serif'],
+                poppinsBold: ['PoppinsBold', 'sans-serif'],
+                poppinsItalic: ['PoppinsBoldItalic', 'sans-serif'],
+                poppinsLight: ['PoppinsBoldLight', 'sans-serif'],
+                poppinsMedium: ['PoppinsBoldMedium', 'sans-serif'],
+                poppinsRegular: ['PoppinsBoldRegular', 'sans-serif'],
             },
             spacing: {
                 180: '32rem',
