@@ -1,33 +1,23 @@
 ---
 import Toggle from '../components/ThemeChange.astro';
-const { headerName } = Astro.props;
-const headerNames = [
-    { name: 'home', isActive: false },
-    { name: 'publications', isActive: false },
-    { name: 'projects', isActive: false },
-    { name: 'resume', isActive: false },
-];
-headerNames.map((item) => {
-    if (headerName === item.name) item.isActive = true;
-    return item;
-});
+const pathName = new URL(Astro.request.url);
+const currentPath = pathName.pathname.slice(1);
 ---
 
-<div
-    class="light:bg-background container mx-auto max-w-6xl px-6 py-16 dark:bg-background md:py-16"
->
-    <Toggle />
-    <nav class="light:text-text container relative mx-auto dark:text-text">
+<div class="container mx-auto max-w-6xl px-6 py-16 md:py-16">
+    <nav class="container relative mx-auto">
         <div
-            class="flex flex-col items-center space-x-2.5 md:flex-row md:space-x-20"
+            class="flex flex-col items-center md:items-baseline space-x-2.5 md:flex-row md:space-x-20"
         >
-            <img src="/images/yhonatan.svg" alt="Yhonatan" />
-            <div class="space-x-4 py-10 text-sm md:w-full md:p-0 md:text-xl">
+            <h1 class="text-4xl md:text-5xl object-left">Yhonatan</h1>
+            <div class=" object-right space-x-4 py-10 text-base md:w-full md:p-0 md:text-2xl">
                 <a
                     href="/"
                     class:list={[
                         'font-poppinsRegular',
-                        { isActive: headerNames[0].isActive },
+                        currentPath === ''
+                            ? 'font-bold text-accessible-text-blue-2 underline underline-offset-8 dark:text-dark-accessible-text-blue-2'
+                            : '',
                     ]}
                 >
                     Home</a
@@ -36,7 +26,9 @@ headerNames.map((item) => {
                     href="/publications"
                     class:list={[
                         'font-poppinsRegular',
-                        { isActive: headerNames[1].isActive },
+                        currentPath === 'publications'
+                            ? 'font-bold text-accessible-text-blue-2 underline underline-offset-8 dark:text-dark-accessible-text-blue-2'
+                            : '',
                     ]}
                 >
                     Publications</a
@@ -45,7 +37,9 @@ headerNames.map((item) => {
                     href="/projects"
                     class:list={[
                         'font-poppinsRegular',
-                        { isActive: headerNames[2].isActive },
+                        currentPath === 'projects'
+                            ? 'font-bold text-accessible-text-blue-2 underline underline-offset-8 dark:text-dark-accessible-text-blue-2'
+                            : '',
                     ]}
                 >
                     Projects</a
@@ -55,7 +49,9 @@ headerNames.map((item) => {
                     href="/resume"
                     class:list={[
                         'font-poppinsRegular',
-                        { isActive: headerNames[3].isActive },
+                        currentPath === 'resume'
+                            ? 'font-bold text-accessible-text-blue-2 underline underline-offset-8 dark:text-dark-accessible-text-blue-2'
+                            : '',
                     ]}
                 >
                     Resume</a
@@ -64,15 +60,16 @@ headerNames.map((item) => {
         </div>
     </nav>
 </div>
-<style>
-    @media (prefers-color-scheme: light) {
-        .isActive {
-            color: #914b72;
+<script>
+    const headerNames: NodeListOf<HTMLAnchorElement> =
+        document.querySelectorAll('nav div div a');
+    headerNames.forEach((headerName) => {
+        headerName.classList.remove('active');
+        const currentPath = window.location.pathname.slice(1);
+        const hrefArray = headerName.href.split('/');
+        const thisPath = hrefArray[hrefArray.length - 1];
+        if (currentPath === thisPath) {
+            headerName.classList.add('active');
         }
-    }
-    @media (prefers-color-scheme: dark) {
-        .isActive {
-            color: #b46e95;
-        }
-    }
-</style>
+    });
+</script>

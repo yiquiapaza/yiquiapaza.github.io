@@ -4,9 +4,9 @@
 
 @layer base {
     :root {
-        --slider-bg: #7ab2b2;
+        --slider-bg: #f6d365;
         --slider-bg-before: #fff;
-        --slider-input-bg: #4d869c;
+        --slider-input-bg: #2e4482;
 
         --accessible-text-blue-1: #1d2e5c;
         --accessible-text-blue-2: #395bc7;
@@ -21,8 +21,8 @@
         --background-blue-1: #f7f9ff;
         --background-blue-2: #fdfdfe;
 
-        --accesible-text-gray-1: #1e1f24;
-        --accesible-text-gray-2: #62636c;
+        --accessible-text-gray-1: #1e1f24;
+        --accessible-text-gray-2: #62636c;
         --solid-gray-1: #80828d;
         --solid-gray-2: #8b8d98;
         --border-gray-1: #b9bbc6;
@@ -47,8 +47,8 @@
         --dark-background-blue-1: #111725;
         --dark-background-blue-2: #0c111c;
 
-        --dark-accesible-text-gray-1: #eeeef0;
-        --dark-accesible-text-gray-2: #b2b3bd;
+        --dark-accessible-text-gray-1: #eeeef0;
+        --dark-accessible-text-gray-2: #b2b3bd;
         --dark-solid-gray-1: #797b86;
         --dark-solid-gray-2: #6c6e79;
         --dark-border-gray-1: #5f606a;

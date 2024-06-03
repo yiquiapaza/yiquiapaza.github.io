@@ -10,7 +10,7 @@ const { title, event, authors, doi, pdf, url, video, year, image } =
 
 <!--TODO: Refactor when I will have more that ten articles-->
 <div
-    class="bg-interactive-blue-3 dark:bg-dark-interactive-blue-3 mx-auto mb-6 mt-6 max-w-sm overflow-hidden rounded-xl shadow-md md:max-w-6xl"
+    class="mx-auto mb-6 mt-6 max-w-sm overflow-hidden rounded-xl bg-interactive-blue-3 shadow-md dark:bg-dark-interactive-blue-3 md:max-w-6xl"
 >
     <div class="md:flex">
         <div class="md:shrink-0">
@@ -35,7 +35,9 @@ const { title, event, authors, doi, pdf, url, video, year, image } =
             >
                 {event} - {year}
             </h1>
-            <h2 class="light:text-text dark:text-text md:test-md mt-1 block text-sm leading-tight">
+            <h2
+                class="light:text-text dark:text-text md:test-md mt-1 block text-sm leading-tight"
+            >
                 {
                     authors.map((author) =>
                         author === 'Yhonatan Iquiapaza,' ? (
