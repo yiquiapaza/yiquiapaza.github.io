@@ -46,6 +46,37 @@
 <script>
     //TODO: refactor when is a default theme is picked
     // Create a localStore theme, by default is light
+
+    const themeToggle: HTMLInputElement = document.querySelector(
+        '.theme-switch input[type="checkbox"]',
+    );
+    // True is light and False is dark
+    //themeToggle.checked = true
+    function switchTheme(e) {
+        if (localStorage.getItem('color-theme')) {
+            if (e.target.checked) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+                console.log('light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+                console.log('dark');
+            }
+        } else {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+            }
+        }
+    }
+
+    themeToggle.addEventListener('change', switchTheme, false);
+
+    /*
     localStorage.setItem('theme', 'light');
     document.documentElement.classList.add('light');
     const selectedTheme = localStorage.getItem('theme');
@@ -54,12 +85,9 @@
         console.log(selectedTheme);
     }
 
-    const themeToggle: HTMLInputElement = document.querySelector(
-        '.theme-switch input[type="checkbox"]',
-    );
     themeToggle.checked = false
 
-    // Function that will switch the theme based on the if the theme toggle is checked or not
+    // Function that will switch the theme based on if the theme toggle is checked or not
     function switchTheme(e) {
         console.log(e.target.checked);
         if (e.target.checked) {
@@ -75,4 +103,5 @@
 
     // Add an event listener to the theme toggle, which will switch the theme
     themeToggle.addEventListener('change', switchTheme, false);
+*/
 </script>

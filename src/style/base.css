@@ -33,34 +33,32 @@
         --interactive-gray-3: #eff0f3;
         --background-gray-1: #f9f9fb;
         --background-gray-2: #fcfcfd;
-    }
 
-    .dark {
-        --accessible-text-blue-1: #d5e2ff;
-        --accessible-text-blue-2: #93b4ff;
-        --solid-blue-1: #3f5cb0;
-        --solid-blue-2: #3d63dd;
-        --border-blue-1: #405eb2;
-        --border-blue-2: #375098;
-        --border-blue-3: #2d4484;
-        --interactive-blue-1: #243974;
-        --interactive-blue-2: #1d2e61;
-        --interactive-blue-3: #172448;
-        --background-blue-1: #111725;
-        --background-blue-2: #0c111c;
+        --dark-accessible-text-blue-1: #d5e2ff;
+        --dark-accessible-text-blue-2: #93b4ff;
+        --dark-solid-blue-1: #3f5cb0;
+        --dark-solid-blue-2: #3d63dd;
+        --dark-border-blue-1: #405eb2;
+        --dark-border-blue-2: #375098;
+        --dark-border-blue-3: #2d4484;
+        --dark-interactive-blue-1: #243974;
+        --dark-interactive-blue-2: #1d2e61;
+        --dark-interactive-blue-3: #172448;
+        --dark-background-blue-1: #111725;
+        --dark-background-blue-2: #0c111c;
 
-        --accesible-text-gray-1: #eeeef0;
-        --accesible-text-gray-2: #b2b3bd;
-        --solid-gray-1: #797b86;
-        --solid-gray-2: #6c6e79;
-        --border-gray-1: #5f606a;
-        --border-gray-2: #46484f;
-        --border-gray-3: #393a40;
-        --interactive-gray-1: #303136;
-        --interactive-gray-2: #292a2e;
-        --interactive-gray-3: #222325;
-        --background-gray-1: #19191b;
-        --background-gray-2: #111113;
+        --dark-accesible-text-gray-1: #eeeef0;
+        --dark-accesible-text-gray-2: #b2b3bd;
+        --dark-solid-gray-1: #797b86;
+        --dark-solid-gray-2: #6c6e79;
+        --dark-border-gray-1: #5f606a;
+        --dark-border-gray-2: #46484f;
+        --dark-border-gray-3: #393a40;
+        --dark-interactive-gray-1: #303136;
+        --dark-interactive-gray-2: #292a2e;
+        --dark-interactive-gray-3: #222325;
+        --dark-background-gray-1: #19191b;
+        --dark-background-gray-2: #111113;
     }
 }
 @font-face {

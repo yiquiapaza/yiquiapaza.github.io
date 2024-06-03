@@ -434,6 +434,60 @@ video {
   display: none;
 }
 
+:root {
+  --slider-bg: #7ab2b2;
+  --slider-bg-before: #fff;
+  --slider-input-bg: #4d869c;
+  --accessible-text-blue-1: #1d2e5c;
+  --accessible-text-blue-2: #395bc7;
+  --solid-blue-1: #3657c3;
+  --solid-blue-2: #3d63dd;
+  --border-blue-1: #87a5ef;
+  --border-blue-2: #a6bff9;
+  --border-blue-3: #bdd1ff;
+  --interactive-blue-1: #d0dfff;
+  --interactive-blue-2: #dfeaff;
+  --interactive-blue-3: #edf2fe;
+  --background-blue-1: #f7f9ff;
+  --background-blue-2: #fdfdfe;
+  --accesible-text-gray-1: #1e1f24;
+  --accesible-text-gray-2: #62636c;
+  --solid-gray-1: #80828d;
+  --solid-gray-2: #8b8d98;
+  --border-gray-1: #b9bbc6;
+  --border-gray-2: #cdced7;
+  --border-gray-3: #d8d9e0;
+  --interactive-gray-1: #e0e1e6;
+  --interactive-gray-2: #e7e8ec;
+  --interactive-gray-3: #eff0f3;
+  --background-gray-1: #f9f9fb;
+  --background-gray-2: #fcfcfd;
+  --dark-accessible-text-blue-1: #d5e2ff;
+  --dark-accessible-text-blue-2: #93b4ff;
+  --dark-solid-blue-1: #3f5cb0;
+  --dark-solid-blue-2: #3d63dd;
+  --dark-border-blue-1: #405eb2;
+  --dark-border-blue-2: #375098;
+  --dark-border-blue-3: #2d4484;
+  --dark-interactive-blue-1: #243974;
+  --dark-interactive-blue-2: #1d2e61;
+  --dark-interactive-blue-3: #172448;
+  --dark-background-blue-1: #111725;
+  --dark-background-blue-2: #0c111c;
+  --dark-accesible-text-gray-1: #eeeef0;
+  --dark-accesible-text-gray-2: #b2b3bd;
+  --dark-solid-gray-1: #797b86;
+  --dark-solid-gray-2: #6c6e79;
+  --dark-border-gray-1: #5f606a;
+  --dark-border-gray-2: #46484f;
+  --dark-border-gray-3: #393a40;
+  --dark-interactive-gray-1: #303136;
+  --dark-interactive-gray-2: #292a2e;
+  --dark-interactive-gray-3: #222325;
+  --dark-background-gray-1: #19191b;
+  --dark-background-gray-2: #111113;
+}
+
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -693,6 +747,14 @@ video {
   border-radius: 0.75rem;
 }
 
+.bg-background-blue-1 {
+  background-color: var(--background-blue-1);
+}
+
+.bg-solid-blue-1 {
+  background-color: var(--solid-blue-1);
+}
+
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
@@ -781,6 +843,10 @@ video {
   letter-spacing: 0.025em;
 }
 
+.text-accessible-text-gray-1 {
+  color: var(--accessible-text-gray-1);
+}
+
 .text-slate-500 {
   --tw-text-opacity: 1;
   color: rgb(100 116 139 / var(--tw-text-opacity));
@@ -790,38 +856,6 @@ video {
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --text: #081611;
-    --background: #e9f7f2;
-    --primary: #4cbda1;
-    --secondary: #b79ada;
-    --accent: #cd79cc;
-    --background-primary: #e0e5ee;
-    --background-secondary: #caece2;
-    --background-footer: #ddebe6;
-    --slider-bg: #CDE8E5;
-    --slider-bg-before: #EEF7FF;
-    --slider-input-bg: #13362c;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #e9f7f2;
-    --background: #2D3250;
-    --primary: #42b397;
-    --secondary: #422565;
-    --accent: #863285;
-    --background-primary: #424769;
-    --background-secondary: #13362c;
-    --background-footer: #14221d;
-    --slider-bg: #7AB2B2;
-    --slider-bg-before: #fff;
-    --slider-input-bg: #4D869C;
-  }
 }
 
 @font-face {
@@ -986,16 +1020,12 @@ input:checked + .slider .feather-sun {
   transform: rotate(-45deg) translateY(6px) translateX(-6px);
 }
 
-:is(.dark .dark\:bg-background) {
-  background-color: var(--background);
+:is(.dark .dark\:bg-dark-background-blue-1) {
+  background-color: var(--dark-background-blue-1);
 }
 
-:is(.dark .dark\:bg-background-primary) {
-  background-color: var(--background-primary);
-}
-
-:is(.dark .dark\:text-text) {
-  color: var(--text);
+:is(.dark .dark\:text-dark-accessible-text-blue-1) {
+  color: var(--dark-accessible-text-blue-1);
 }
 
 @media (min-width: 640px) {
