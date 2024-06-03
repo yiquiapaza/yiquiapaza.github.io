@@ -26,16 +26,16 @@ const { title, event, authors, doi, pdf, url, video, year, image } =
         </div>
         <div class="p-8">
             <div
-                class="text-palermo4 text-sm font-semibold uppercase tracking-wide md:text-lg"
+                class="light:text-text dark:text-text text-sm font-semibold uppercase tracking-wide md:text-lg"
             >
                 {title}
             </div>
             <h1
-                class="text-palermo2 mt-1 block text-sm font-medium leading-tight md:text-lg"
+                class="light:text-text dark:text-text mt-1 block text-sm font-medium leading-tight md:text-lg"
             >
                 {event} - {year}
             </h1>
-            <h2 class="md:test-md mt-1 block text-sm leading-tight text-black">
+            <h2 class="light:text-text dark:text-text md:test-md mt-1 block text-sm leading-tight">
                 {
                     authors.map((author) =>
                         author === 'Yhonatan Iquiapaza,' ? (

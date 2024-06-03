@@ -2,37 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
-@media (prefers-color-scheme: light) {
+@layer base {
     :root {
-        --text: #081611;
-        --background: #e9f7f2;
-        --primary: #4cbda1;
-        --secondary: #b79ada;
-        --accent: #cd79cc;
-        --background-primary: #e0e5ee;
-        --background-secondary: #caece2;
-        --background-footer: #ddebe6;
-        --slider-bg: #caece2;
+        --slider-bg: #7ab2b2;
         --slider-bg-before: #fff;
-        --slider-input-bg: #13362c;
-    }
-}
-@media (prefers-color-scheme: dark) {
-    :root {
-        --text: #e9f7f2;
-        --background: #0c1210;
-        --primary: #42b397;
-        --secondary: #422565;
-        --accent: #863285;
-        --background-primary: #131922;
-        --background-secondary: #13362c;
-        --background-footer: #14221d;
-        --slider-bg: #caece2;
-        --slider-bg-before: #fff;
-        --slider-input-bg: #b79ada;
-    }
-}
+        --slider-input-bg: #4d869c;
 
+        --accessible-text-blue-1: #1d2e5c;
+        --accessible-text-blue-2: #395bc7;
+        --solid-blue-1: #3657c3;
+        --solid-blue-2: #3d63dd;
+        --border-blue-1: #87a5ef;
+        --border-blue-2: #a6bff9;
+        --border-blue-3: #bdd1ff;
+        --interactive-blue-1: #d0dfff;
+        --interactive-blue-2: #dfeaff;
+        --interactive-blue-3: #edf2fe;
+        --background-blue-1: #f7f9ff;
+        --background-blue-2: #fdfdfe;
+
+        --accesible-text-gray-1: #1e1f24;
+        --accesible-text-gray-2: #62636c;
+        --solid-gray-1: #80828d;
+        --solid-gray-2: #8b8d98;
+        --border-gray-1: #b9bbc6;
+        --border-gray-2: #cdced7;
+        --border-gray-3: #d8d9e0;
+        --interactive-gray-1: #e0e1e6;
+        --interactive-gray-2: #e7e8ec;
+        --interactive-gray-3: #eff0f3;
+        --background-gray-1: #f9f9fb;
+        --background-gray-2: #fcfcfd;
+    }
+
+    .dark {
+        --accessible-text-blue-1: #d5e2ff;
+        --accessible-text-blue-2: #93b4ff;
+        --solid-blue-1: #3f5cb0;
+        --solid-blue-2: #3d63dd;
+        --border-blue-1: #405eb2;
+        --border-blue-2: #375098;
+        --border-blue-3: #2d4484;
+        --interactive-blue-1: #243974;
+        --interactive-blue-2: #1d2e61;
+        --interactive-blue-3: #172448;
+        --background-blue-1: #111725;
+        --background-blue-2: #0c111c;
+
+        --accesible-text-gray-1: #eeeef0;
+        --accesible-text-gray-2: #b2b3bd;
+        --solid-gray-1: #797b86;
+        --solid-gray-2: #6c6e79;
+        --border-gray-1: #5f606a;
+        --border-gray-2: #46484f;
+        --border-gray-3: #393a40;
+        --interactive-gray-1: #303136;
+        --interactive-gray-2: #292a2e;
+        --interactive-gray-3: #222325;
+        --background-gray-1: #19191b;
+        --background-gray-2: #111113;
+    }
+}
 @font-face {
     font-family: 'PoppinsBold';
     src: url(/public/fonts/Poppins-Bold.ttf);

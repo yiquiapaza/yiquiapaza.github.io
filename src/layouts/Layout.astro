@@ -33,3 +33,14 @@ const { title, page } = Astro.props;
         </main>
     </body>
 </html>
+<script>
+    if (
+        localStorage.getItem('color-theme') === 'dark' ||
+        (!('color-theme' in localStorage) &&
+            window.matchMedia('(prefers-color-theme: dark)').matches)
+    ) {
+        document.documentElement.classList.add('dark');
+    } else {
+        document.documentElement.classList.remove('dark');
+    }
+</script>
