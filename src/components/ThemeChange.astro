@@ -1,4 +1,4 @@
-<div class="theme-switch-wrapper object-right-top pt-8 pr-8">
+<div class="theme-switch-wrapper object-right-top pr-8 pt-8">
     <label class="theme-switch" for="checkbox">
         <input type="checkbox" id="checkbox" />
         <div class="slider">
@@ -44,9 +44,6 @@
 </div>
 
 <script>
-    //TODO: refactor when is a default theme is picked
-    // Create a localStore theme, by default is light
-
     const themeToggle: HTMLInputElement = document.querySelector(
         '.theme-switch input[type="checkbox"]',
     );
@@ -75,33 +72,4 @@
     }
 
     themeToggle.addEventListener('change', switchTheme, false);
-
-    /*
-    localStorage.setItem('theme', 'light');
-    document.documentElement.classList.add('light');
-    const selectedTheme = localStorage.getItem('theme');
-
-    if (selectedTheme) {
-        console.log(selectedTheme);
-    }
-
-    themeToggle.checked = false
-
-    // Function that will switch the theme based on if the theme toggle is checked or not
-    function switchTheme(e) {
-        console.log(e.target.checked);
-        if (e.target.checked) {
-            document.documentElement.classList.add('dark');
-            document.documentElement.classList.remove('light');
-            localStorage.setItem('theme', 'dark');
-        } else {
-            document.documentElement.classList.add('light');
-            document.documentElement.classList.remove('dark');
-            localStorage.setItem('theme', 'light');
-        }
-    }
-
-    // Add an event listener to the theme toggle, which will switch the theme
-    themeToggle.addEventListener('change', switchTheme, false);
-*/
 </script>
