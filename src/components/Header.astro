@@ -1,79 +1,79 @@
 ---
 const pathName = new URL(Astro.request.url);
 const currentPath = pathName.pathname.slice(1);
-//TODO: update color name and set the header position
 ---
 
 <div class="relative inset-x-0 py-8">
-    <nav class="container mx-auto">
-        <div
-            class="flex flex-col items-center space-x-2.5 md:flex-row md:items-baseline md:space-x-20"
+  <nav class="container mx-auto">
+    <div
+      class="flex flex-col items-center space-x-2.5 md:flex-row md:items-baseline md:space-x-20"
+    >
+      <h1
+        class="object-left text-4xl text-accessible-text-blue-2 dark:text-dark-accessible-text-blue-2 md:text-5xl"
+      >
+        <a href="/">Yhonatan</a>
+      </h1>
+      <div
+        class="space-x-4 object-right py-10 text-base md:w-full md:p-0 md:text-2xl"
+      >
+        <a
+          href="/"
+          class:list={[
+            'dark:text-dark-accessible-text-2 font-poppinsRegular text-accessible-text-blue-2',
+            currentPath === ''
+              ? 'font-bold text-accessible-text-blue-1 underline underline-offset-8 dark:text-dark-accessible-text-blue-1'
+              : '',
+          ]}
         >
-            <h1 class="object-left text-4xl md:text-5xl">Yhonatan</h1>
-            <div
-                class="space-x-4 object-right py-10 text-base md:w-full md:p-0 md:text-2xl"
-            >
-                <a
-                    href="/"
-                    class:list={[
-                        'font-poppinsRegular',
-                        currentPath === ''
-                            ? 'font-bold text-accessible-text-blue-2 underline underline-offset-8 dark:text-dark-accessible-text-blue-2'
-                            : '',
-                    ]}
-                >
-                    Home</a
-                >
-                <a
-                    href="/publications"
-                    class:list={[
-                        'font-poppinsRegular',
-                        currentPath === 'publications' ||
-                        currentPath === 'publications/'
-                            ? 'font-bold text-accessible-text-blue-2 underline underline-offset-8 dark:text-dark-accessible-text-blue-2'
-                            : '',
-                    ]}
-                >
-                    Publications</a
-                >
-                <a
-                    href="/projects"
-                    class:list={[
-                        'font-poppinsRegular',
-                        currentPath === 'projects' ||
-                        currentPath === 'projects/'
-                            ? 'font-bold text-accessible-text-blue-2 underline underline-offset-8 dark:text-dark-accessible-text-blue-2'
-                            : '',
-                    ]}
-                >
-                    Projects</a
-                >
-                <!--TODO: change personal drive resume url-->
-                <a
-                    href="/resume"
-                    class:list={[
-                        'font-poppinsRegular',
-                        currentPath === 'resume' || currentPath === 'resume/'
-                            ? 'font-bold text-accessible-text-blue-2 underline underline-offset-8 dark:text-dark-accessible-text-blue-2'
-                            : '',
-                    ]}
-                >
-                    Resume</a
-                >
-            </div>
-        </div>
-    </nav>
+          Home</a
+        >
+        <a
+          href="/publications"
+          class:list={[
+            'dark:text-dark-accessible-text-2 font-poppinsRegular text-accessible-text-blue-2',
+            currentPath === 'publications' || currentPath === 'publications/'
+              ? 'font-bold text-accessible-text-blue-1 underline underline-offset-8 dark:text-dark-accessible-text-blue-1'
+              : '',
+          ]}
+        >
+          Publications</a
+        >
+        <a
+          href="/projects"
+          class:list={[
+            'dark:text-dark-accessible-text-2 font-poppinsRegular text-accessible-text-blue-2',
+            currentPath === 'projects' || currentPath === 'projects/'
+              ? 'font-bold text-accessible-text-blue-1 underline underline-offset-8 dark:text-dark-accessible-text-blue-1'
+              : '',
+          ]}
+        >
+          Projects</a
+        >
+        <a
+          href="/resume"
+          class:list={[
+            'dark:text-dark-accessible-text-2 font-poppinsRegular text-accessible-text-blue-2',
+            currentPath === 'resume' || currentPath === 'resume/'
+              ? 'font-bold text-accessible-text-blue-1 underline underline-offset-8 dark:text-dark-accessible-text-blue-1'
+              : '',
+          ]}
+        >
+          Resume</a
+        >
+      </div>
+    </div>
+  </nav>
 </div>
 <script>
-    const headerNames: NodeListOf<HTMLAnchorElement> =
-        document.querySelectorAll('nav div div a');
-    headerNames.forEach((headerName) => {
-        headerName.classList.remove('active');
-        const currentPath = window.location.pathname.slice(1);
-        const hrefArray = headerName.href.split('/');
-        const thisPath = hrefArray[hrefArray.length - 1];
-        if (currentPath === thisPath) {
-            headerName.classList.add('active');
-        }
-    });
+  const headerNames: NodeListOf<HTMLAnchorElement> =
+    document.querySelectorAll('nav div div a');
+  headerNames.forEach((headerName) => {
+    headerName.classList.remove('active');
+    const currentPath = window.location.pathname.slice(1);
+    const hrefArray = headerName.href.split('/');
+    const thisPath = hrefArray[hrefArray.length - 1];
+    if (currentPath === thisPath) {
+      headerName.classList.add('active');
+    }
+  });
 </script>

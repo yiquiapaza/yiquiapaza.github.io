@@ -8,7 +8,8 @@
         "doi": "https://doi.org/10.1145/3625008.3625021",
         "url": "",
         "pdf": "",
-        "video": ""
+        "video": "",
+        "alt": "Combining Desktop and AR for Visual Data Analysis - SVR"
     },
     {
         "title": "Vibrotactile Data Physicalization: Exploratory Insights for Haptization of Low-resolution Images",
@@ -28,7 +29,8 @@
         "doi": "https://doi.org/10.1145/3488162.3488171",
         "url": "",
         "pdf": "",
-        "video": ""
+        "video": "",
+        "alt": "Vibrotactile Data Physucalization - SVR"
     },
     {
         "title": "Cooking in the dark: a mixed reality empathy experience for the embodiment of blindness",
@@ -50,7 +52,8 @@
         "doi": "https://doi.org/10.5753/xr_in_games.2021.15680",
         "url": "",
         "pdf": "",
-        "video": ""
+        "video": "",
+        "alt": "Coking in the Dark - Games Workshop"
     },
     {
         "title": "Cooking in the Dark: Exploring Spatial Audio as MR Assistive Technology for the Visually Impaired",
@@ -72,7 +75,8 @@
         "doi": "https://doi.org/10.1007/978-3-030-85607-6_29",
         "url": "",
         "pdf": "",
-        "video": "https://youtu.be/1jQ0Yg-rgRQ"
+        "video": "https://youtu.be/1jQ0Yg-rgRQ",
+        "alt": "Cooking in the Dark - Interact"
     },
     {
         "title": "3DUI and the Phantom Limb: multisensory experience for embodiment of amputation",
@@ -90,7 +94,8 @@
         "doi": "https://doi.org/10.1109/VRW50115.2020.00110",
         "url": "",
         "pdf": "",
-        "video": "https://youtu.be/Cmb8h9V9VVM"
+        "video": "https://youtu.be/Cmb8h9V9VVM",
+        "alt": "3DUI and the Phantom Limb - IEEE VR"
     },
     {
         "title": "E-mpathy and the Phantom Limb Sensation: A Multisensory Experience for Embodiment of Amputation",
@@ -109,6 +114,7 @@
         "doi": "example",
         "url": "https://www.diva-portal.org/smash/record.jsf?pid=diva2%3A1788304&dswid=-4201",
         "pdf": "http://ceur-ws.org/Vol-2618/paper5.pdf",
-        "video": ""
+        "video": "",
+        "alt": "Empathy and the Phantom Limb Sensation - XChange Reality"
     }
 ]
