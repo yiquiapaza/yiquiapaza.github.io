@@ -28,7 +28,7 @@ const currentPath = pathName.pathname.slice(1);
                     href="/publications"
                     class:list={[
                         'font-poppinsRegular',
-                        currentPath === 'publications'
+                        currentPath === 'publications' || currentPath === 'publications/'
                             ? 'font-bold text-accessible-text-blue-2 underline underline-offset-8 dark:text-dark-accessible-text-blue-2'
                             : '',
                     ]}
@@ -39,7 +39,7 @@ const currentPath = pathName.pathname.slice(1);
                     href="/projects"
                     class:list={[
                         'font-poppinsRegular',
-                        currentPath === 'projects'
+                        currentPath === 'projects' || currentPath === 'projects/'
                             ? 'font-bold text-accessible-text-blue-2 underline underline-offset-8 dark:text-dark-accessible-text-blue-2'
                             : '',
                     ]}
@@ -51,7 +51,7 @@ const currentPath = pathName.pathname.slice(1);
                     href="/resume"
                     class:list={[
                         'font-poppinsRegular',
-                        currentPath === 'resume'
+                        currentPath === 'resume' || currentPath === 'resume/'
                             ? 'font-bold text-accessible-text-blue-2 underline underline-offset-8 dark:text-dark-accessible-text-blue-2'
                             : '',
                     ]}
