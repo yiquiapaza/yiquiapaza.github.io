@@ -3,44 +3,45 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Toggle from '../components/ThemeChange.astro';
 interface Props {
-    title: string;
-    page: string;
+  title: string;
+  page: string;
 }
 const { title, page } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="description" content="Astro description" />
-        <meta name="viewport" content="width=device-width" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
 
-        <link rel="icon" type="image/x-icon" href="/images/aricon.png" />
-        <meta name="generator" content={Astro.generator} />
-        <link href="/css/style.css" rel="stylesheet" />
-        <title>{title}</title>
-    </head>
+    <link rel="icon" type="image/x-icon" href="/images/aricon.png" />
+    <meta name="generator" content={Astro.generator} />
+    <link href="/css/style.css" rel="stylesheet" />
+    <title>{title}</title>
 
-    <body class="bg-background-blue-1 dark:bg-dark-background-blue-1">
-        <main
-            class="bg-background-blue-1 text-accessible-text-gray-1 dark:bg-dark-background-blue-1 dark:text-dark-accessible-text-blue-1"
-        >
-            <Toggle />
-            <Header headerName={page} />
-            <slot />
-            <Footer />
-        </main>
-    </body>
-</html>
-<script>
-    if (
+    <script>
+      if (
         localStorage.getItem('color-theme') === 'dark' ||
         (!('color-theme' in localStorage) &&
-            window.matchMedia('(prefers-color-theme: dark)').matches)
-    ) {
+          window.matchMedia('(prefers-color-theme: dark)').matches)
+      ) {
         document.documentElement.classList.add('dark');
-    } else {
+      } else {
         document.documentElement.classList.remove('dark');
-    }
-</script>
+      }
+    </script>
+  </head>
+
+  <body class="bg-background-blue-1 dark:bg-dark-background-blue-1">
+    <main
+      class="bg-background-blue-1 text-accessible-text-gray-1 dark:bg-dark-background-blue-1 dark:text-dark-accessible-text-blue-1"
+    >
+      <Toggle />
+      <Header headerName={page} />
+      <slot />
+      <Footer />
+    </main>
+  </body>
+</html>
