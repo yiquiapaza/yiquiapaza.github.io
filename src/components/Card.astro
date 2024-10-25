@@ -1,9 +1,5 @@
 ---
-import { Image } from 'astro:assets';
-import doiImg from '/public/icons/doi.png';
-import pdfImg from '/public/icons/pdf.png';
-import urlImg from '/public/icons/address.png';
-import videoImg from '/public/icons/video.png';
+import { Image } from "astro:assets";
 const { title, event, authors, doi, pdf, url, video, year, image, alt } =
   Astro.props;
 ---
@@ -42,8 +38,8 @@ const { title, event, authors, doi, pdf, url, video, year, image, alt } =
         class="md:test-md mt-1 block text-sm leading-tight text-accessible-text-blue-2 dark:text-dark-accessible-text-blue-2"
       >
         {
-          authors.map((author) =>
-            author === 'Yhonatan Iquiapaza,' ? (
+          authors.map((author:string) =>
+            author === "Yhonatan Iquiapaza," ? (
               <span class="pr-2">
                 <strong>{author}</strong>
               </span>

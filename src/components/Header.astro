@@ -19,10 +19,10 @@ const currentPath = pathName.pathname.slice(1);
         <a
           href="/"
           class:list={[
-            'dark:text-dark-accessible-text-2 font-poppinsRegular text-accessible-text-blue-2',
-            currentPath === ''
-              ? 'font-bold text-accessible-text-blue-1 underline underline-offset-8 dark:text-dark-accessible-text-blue-1'
-              : '',
+            "dark:text-dark-accessible-text-2 font-poppinsRegular text-accessible-text-blue-2",
+            currentPath === ""
+              ? "font-bold text-accessible-text-blue-1 underline underline-offset-8 dark:text-dark-accessible-text-blue-1"
+              : "",
           ]}
         >
           Home</a
@@ -30,10 +30,10 @@ const currentPath = pathName.pathname.slice(1);
         <a
           href="/publications"
           class:list={[
-            'dark:text-dark-accessible-text-2 font-poppinsRegular text-accessible-text-blue-2',
-            currentPath === 'publications' || currentPath === 'publications/'
-              ? 'font-bold text-accessible-text-blue-1 underline underline-offset-8 dark:text-dark-accessible-text-blue-1'
-              : '',
+            "dark:text-dark-accessible-text-2 font-poppinsRegular text-accessible-text-blue-2",
+            currentPath === "publications" || currentPath === "publications/"
+              ? "font-bold text-accessible-text-blue-1 underline underline-offset-8 dark:text-dark-accessible-text-blue-1"
+              : "",
           ]}
         >
           Publications</a
@@ -41,10 +41,10 @@ const currentPath = pathName.pathname.slice(1);
         <a
           href="/projects"
           class:list={[
-            'dark:text-dark-accessible-text-2 font-poppinsRegular text-accessible-text-blue-2',
-            currentPath === 'projects' || currentPath === 'projects/'
-              ? 'font-bold text-accessible-text-blue-1 underline underline-offset-8 dark:text-dark-accessible-text-blue-1'
-              : '',
+            "dark:text-dark-accessible-text-2 font-poppinsRegular text-accessible-text-blue-2",
+            currentPath === "projects" || currentPath === "projects/"
+              ? "font-bold text-accessible-text-blue-1 underline underline-offset-8 dark:text-dark-accessible-text-blue-1"
+              : "",
           ]}
         >
           Projects</a
@@ -52,10 +52,10 @@ const currentPath = pathName.pathname.slice(1);
         <a
           href="/resume"
           class:list={[
-            'dark:text-dark-accessible-text-2 font-poppinsRegular text-accessible-text-blue-2',
-            currentPath === 'resume' || currentPath === 'resume/'
-              ? 'font-bold text-accessible-text-blue-1 underline underline-offset-8 dark:text-dark-accessible-text-blue-1'
-              : '',
+            "dark:text-dark-accessible-text-2 font-poppinsRegular text-accessible-text-blue-2",
+            currentPath === "resume" || currentPath === "resume/"
+              ? "font-bold text-accessible-text-blue-1 underline underline-offset-8 dark:text-dark-accessible-text-blue-1"
+              : "",
           ]}
         >
           Resume</a
@@ -66,14 +66,14 @@ const currentPath = pathName.pathname.slice(1);
 </div>
 <script>
   const headerNames: NodeListOf<HTMLAnchorElement> =
-    document.querySelectorAll('nav div div a');
+    document.querySelectorAll("nav div div a");
   headerNames.forEach((headerName) => {
-    headerName.classList.remove('active');
+    headerName.classList.remove("active");
     const currentPath = window.location.pathname.slice(1);
-    const hrefArray = headerName.href.split('/');
+    const hrefArray = headerName.href.split("/");
     const thisPath = hrefArray[hrefArray.length - 1];
     if (currentPath === thisPath) {
-      headerName.classList.add('active');
+      headerName.classList.add("active");
     }
   });
 </script>

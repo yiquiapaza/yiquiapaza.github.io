@@ -1,7 +1,7 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import Toggle from '../components/ThemeChange.astro';
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Toggle from "../components/ThemeChange.astro";
 interface Props {
   title: string;
   page: string;
@@ -23,13 +23,13 @@ const { title, page } = Astro.props;
 
     <script>
       if (
-        localStorage.getItem('color-theme') === 'dark' ||
-        (!('color-theme' in localStorage) &&
-          window.matchMedia('(prefers-color-theme: dark)').matches)
+        localStorage.getItem("color-theme") === "dark" ||
+        (!("color-theme" in localStorage) &&
+          window.matchMedia("(prefers-color-theme: dark)").matches)
       ) {
-        document.documentElement.classList.add('dark');
+        document.documentElement.classList.add("dark");
       } else {
-        document.documentElement.classList.remove('dark');
+        document.documentElement.classList.remove("dark");
       }
     </script>
   </head>
