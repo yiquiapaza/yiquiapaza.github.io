@@ -1,8 +1,5 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import Toggle from '../components/ThemeChange.astro';
-
+import { ClientRouter } from 'astro:transitions';
 import '../styles/global.css';
 
 interface Props {
@@ -13,8 +10,8 @@ const { title, page } = Astro.props;
 // TODO:
 // [ ] Create a layout for components
 // [ ] Refactor this layout
+//! [ ] Remove fonts that we do not use (some families)
 ---
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -25,7 +22,7 @@ const { title, page } = Astro.props;
   <link rel="icon" type="image/x-icon" href="/images/aricon.png" />
   <meta name="generator" content={Astro.generator} />
   <title>{title}</title>
-
+  <ClientRouter />
   <script>
     if (
       localStorage.getItem('color-theme') === 'dark' ||
@@ -44,9 +41,7 @@ const { title, page } = Astro.props;
   <div class="grid grid-cols-12 gap-4">
     <slot />
   </div>
-  <Toggle />
-  <Header headerName={page} />
-  <Footer />
+  <!--<Toggle />-->
 </main>
 </body>
 </html>

@@ -1,53 +1,26 @@
 ---
+import Header from '../components/Header.astro';
 import Layout from '../layouts/Layout.astro';
 import Photo from '../components/Photo.astro';
 import Bio from '../components/Bio.astro';
 import ExtraInformation from '../components/ExtraInformation.astro';
 import News from '../components/News.astro';
-import Publications from './publications.astro';
+import Publications from '../components/Publications.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  page: string;
+}
+const { title, page } = Astro.props;
 ---
 
 <Layout title="Yhonatan|Home" page="home" transition:animate="slide">
+  <Header headerName={page} />
   <Photo />
   <Bio />
   <ExtraInformation />
   <News />
   <Publications />
-  <div class="col-span-12">Hello</div>
-  <section class="pb-20">
-    <div class="container">
-      <div class="flex flex-col md:flex-col">
-        <div class="container mx-auto mt-10 px-6">
-          <p class="mx-auto max-w-md pt-5 pb-5">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Iaculis
-            at erat pellentesque adipiscing commodo elit. Metus dictum at tempor
-            commodo ullamcorper. Mauris vitae ultricies leo integer. Ultrices
-            tincidunt arcu non sodales. Condimentum mattis pellentesque id nibh
-            tortor id aliquet lectus proin. Lorem sed risus ultricies tristique
-            nulla aliquet enim tortor at. Faucibus nisl tincidunt eget nullam
-            non nisi est. Est ullamcorper eget nulla facilisi etiam. Congue nisi
-            vitae suscipit tellus mauris a diam maecenas. Lobortis mattis
-            aliquam faucibus purus in massa tempor nec feugiat. Nisl rhoncus
-            mattis rhoncus urna. Convallis a cras semper auctor neque vitae.
-            Orci nulla pellentesque dignissim enim sit amet. Ut sem viverra
-            aliquet eget sit amet tellus. Vehicula ipsum a arcu cursus vitae
-            congue.
-          </p>
-          <p class="mx-auto max-w-md pt-5 pb-5">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Iaculis
-            at erat pellentesque adipiscing commodo elit. Metus dictum at tempor
-            commodo ullamcorper. Mauris vitae ultricies leo integer.
-          </p>
-          <p class="mx-auto max-w-md pt-5 pb-5">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Iaculis
-            at erat pellentesque adipiscing commodo elit. Metus dictum at tempor
-            commodo ullamcorper. Mauris vitae ultricies leo integer.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <Footer />
 </Layout>
