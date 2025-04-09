@@ -1,11 +1,20 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from '../layouts/Layout.astro';
+import Photo from '../components/Photo.astro';
+import Bio from '../components/Bio.astro';
+import ExtraInformation from '../components/ExtraInformation.astro';
+import News from '../components/News.astro';
+import Publications from './publications.astro';
 ---
 
 <Layout title="Yhonatan|Home" page="home" transition:animate="slide">
-
-    <div class="col-span-12">Hello</div>
-    <section class="pb-20">
+  <Photo />
+  <Bio />
+  <ExtraInformation />
+  <News />
+  <Publications />
+  <div class="col-span-12">Hello</div>
+  <section class="pb-20">
     <div class="container">
       <div class="flex flex-col md:flex-col">
         <div class="container mx-auto mt-10 px-6">

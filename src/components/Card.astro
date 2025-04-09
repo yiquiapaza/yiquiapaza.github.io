@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets";
+import { Image } from 'astro:assets';
 const { title, event, authors, doi, pdf, url, video, year, image, alt } =
   Astro.props;
 ---
@@ -38,14 +38,14 @@ const { title, event, authors, doi, pdf, url, video, year, image, alt } =
         class="md:test-md mt-1 block text-sm leading-tight text-accessible-text-blue-2 dark:text-dark-accessible-text-blue-2"
       >
         {
-          authors.map((author:string) =>
-            author === "Yhonatan Iquiapaza," ? (
+          authors.map((author: string) =>
+            author === 'Yhonatan Iquiapaza,' ? (
               <span class="pr-2">
                 <strong>{author}</strong>
               </span>
             ) : (
               <span class="pr-2">{author}</span>
-            ),
+            )
           )
         }
       </h2>
