@@ -1,7 +1,7 @@
 ---
-import { Image } from "astro:assets";
+import { Image } from 'astro:assets';
 const { title, event, authors, doi, pdf, url, video, year, image, alt } =
-	Astro.props;
+  Astro.props;
 ---
 
 <!--TODO: add tag or using a box with different background color -->
@@ -16,8 +16,8 @@ const { title, event, authors, doi, pdf, url, video, year, image, alt } =
             src={image}
             alt={alt}
             class="rounded object-cover p-4"
-            width="350"
-            height="350"
+            width="450"
+            height="450"
             loading="lazy"
           />
         )
