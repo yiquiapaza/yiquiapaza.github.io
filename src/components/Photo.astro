@@ -1,1 +1,45 @@
-<div class="col-span-3 col-start-3 font-alegreya-italic">Photo</div>
+---
+import { Image } from 'astro:assets';
+
+import tmpImage from '@assets/template.jpg';
+
+import LogoCV from '@assets/logos/academicons--cv.svg';
+import GoogleScholar from '@assets/logos/academicons--google-scholar.svg';
+import ResearchGate from '@assets/logos/academicons--researchgate.svg';
+import Linkedin from '@assets/logos/formkit--linkedin.svg';
+---
+
+<div class="col-span-3 col-start-3">
+  <div class="flex flex-col items-center gap-2">
+    <Image
+      src={tmpImage}
+      alt="Yhonatan Iquiapaza"
+      width={150}
+      class="rounded-full"
+    />
+    <div class="flex flex-row gap-2">
+      <div class="hover:bg-red-300 p-2 hover:rounded-full">
+        <a href="#">
+          <GoogleScholar width={24} height={24} />
+        </a>
+      </div>
+      <div class="hover:bg-emerald-300 p-2 hover:rounded-full">
+        <a href="#">
+          <ResearchGate width={24} height={24} />
+        </a>
+      </div>
+      <div class="hover:bg-blue-300 p-2 hover:rounded-full">
+        <a href="#">
+          <Linkedin width={24} height={24} />
+        </a>
+      </div>
+      <div class="hover:bg-orange-300 p-2 hover:rounded-full">
+        <a href="#">
+          <LogoCV width={24} height={24} />
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
