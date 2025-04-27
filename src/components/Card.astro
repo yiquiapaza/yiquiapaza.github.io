@@ -1,105 +1,121 @@
 ---
 import { Image } from 'astro:assets';
-const { title, event, authors, doi, pdf, url, video, year, image, alt } =
+const {
+  title,
+  event,
+  authors,
+  doi,
+  pdf,
+  url,
+  video,
+  year,
+  image,
+  alt,
+  acronym
+} =
   Astro.props;
+import DOI from '@assets/logos/academicons--doi.svg';
+import Video from '@assets/logos/mdi--video.svg';
+import PDF from '@assets/logos/mingcute--pdf-fill.svg';
+import Website from '@assets/logos/bitcoin-icons--link-filled.svg';
+//! TODO: add cite and abstract buttons using textarea collapse
 ---
 
-<!--TODO: add tag or using a box with different background color -->
 <div
-  class="bottom-2 mx-auto mb-6 mt-6 max-w-sm overflow-hidden rounded-xl bg-interactive-blue-3 shadow-md dark:bg-dark-interactive-blue-3 md:max-w-6xl"
+  class="font-montserrat-regular pt-5 pb-5"
 >
-  <div class="flex flex-col items-center md:flex md:flex-row">
-    <div class="relative rounded">
+  <div
+    class="flex flex-col items-center md:flex md:flex-row border-b-1 border-primary">
+    <div class="md:w-96">
       {
         (
           <Image
             src={image}
             alt={alt}
-            class="rounded object-cover p-4"
-            width="450"
-            height="450"
-            loading="lazy"
           />
         )
       }
     </div>
-    <div class="p-2 md:p-8">
+    <div class="p-2 md:p-8 w-full">
       <div
-        class="text-sm font-semibold uppercase tracking-wide text-accessible-text-blue-1 dark:text-dark-accessible-text-blue-1 md:text-lg"
+        class="text-sm uppercase font-montserrat-semi-bold"
       >
         {title}
       </div>
-      <h1
-        class="mt-1 block text-sm font-medium leading-tight text-accessible-text-blue-2 dark:text-dark-accessible-text-blue-2 md:text-lg"
-      >
-        {event} - {year}
-      </h1>
-      <h2
-        class="md:test-md mt-1 block text-sm leading-tight text-accessible-text-blue-2 dark:text-dark-accessible-text-blue-2"
+      <div
+        class="mt-1 block text-sm leading-tight"
       >
         {
           authors.map((author: string) =>
             author === 'Yhonatan Iquiapaza,' ? (
-              <span class="pr-2">
+              <span class="font-montserrat-semi-bold">
                 <strong>{author}</strong>
               </span>
             ) : (
-              <span class="pr-2">{author}</span>
+              <span class="pr-1">{author}</span>
             )
           )
         }
-      </h2>
-      <p class="mt-2 hidden text-slate-500">
-        Looking to take your team away on a retreat to enjoy awesome food and
-        take in some sunshine? We have a list of places to do just that.
-      </p>
-      <div class="mt-3 flex flex-row">
+      </div>
+      <div
+        class="mt-1 font-alegreya-medium-italic content-center"
+      >{
+        acronym === 'SVR' && (<span
+          class="bg-green-500 text-white pl-2 pr-2 rounded-2xl font-montserrat-semi-bold text-sm">{acronym}</span>) ||
+        acronym === 'XCR' && (<span
+          class="bg-rose-500 text-white pl-2 pr-2 rounded-2xl font-montserrat-semi-bold text-sm">{acronym}</span>) ||
+        acronym === 'XR Workshop' && (<span
+          class="bg-amber-500 text-white pl-2 pr-2 rounded-2xl font-montserrat-semi-bold text-sm">{acronym}</span>) ||
+        acronym === 'INTERACT' && (<span
+          class="bg-sky-500 text-white pl-2 pr-2 rounded-2xl font-montserrat-semi-bold text-sm">{acronym}</span>) ||
+        acronym === 'IEEE VR' && (<span
+          class="bg-purple-500 text-white pl-2 pr-2 rounded-2xl font-montserrat-semi-bold text-sm">{acronym}</span>)
+      }
+        <span class="pl-2">{event}</span> - {year}
+      </div>
+      <div class="flex flex-row pt-3">
         {
           doi && (
-            <div class="mr-2.5">
+            <div
+              class="p-2 hover:bg-orange-100 hover:rounded-full hover:text-primary">
               <a
                 href={doi}
                 target="_blank"
-                class="block w-14 content-center rounded-lg bg-cyan-500"
+                class="flex flex-row"
               >
-                <div class="flex justify-center">
-                  <h3 class="text-center text-sm font-semibold text-interactive-blue-3">
-                    DOI
-                  </h3>
-                </div>
+                <DOI width={24} height={24} />
+                [ Link ]
               </a>
             </div>
           )
         }
         {
           pdf && (
-            <div class="mr-2.5">
+            <div
+              class="p-2 hover:bg-orange-100 hover:rounded-full hover:text-primary">
               <a
                 href={pdf}
                 target="_blank"
-                class="block w-14 content-center rounded-lg bg-fuchsia-500"
+                class="flex flex-row"
               >
-                <div class="flex justify-center">
-                  <h3 class="text-center text-sm font-semibold text-interactive-blue-3">
-                    PDF
-                  </h3>
-                </div>
+                <PDF width={24} height={24} />
+                [ PDF ]
               </a>
             </div>
           )
         }
         {
           url && (
-            <div class="mr-2.5">
+            <div
+              class="p-2 hover:bg-emerald-100 hover:rounded-full hover:text-primary">
               <a
                 href={url}
                 target="_blank"
-                class="block w-14 content-center rounded-lg bg-emerald-500"
+                class="flex flex-row"
               >
                 <div class="flex justify-center">
-                  <h3 class="text-center text-sm font-semibold text-interactive-blue-3">
-                    URL
-                  </h3>
+                  <Website width={24} height={24} />
+                  [ URL ]
                 </div>
               </a>
             </div>
@@ -107,17 +123,15 @@ const { title, event, authors, doi, pdf, url, video, year, image, alt } =
         }
         {
           video && (
-            <div class="mr-2.5">
+            <div
+              class="p-2 hover:bg-red-100 hover:rounded-full hover:text-primary">
               <a
                 href={video}
                 target="_blank"
-                class="block w-14 content-center rounded-lg bg-red-500"
+                class="flex flex-row"
               >
-                <div class="flex justify-center">
-                  <h3 class="text-center text-sm font-semibold text-interactive-blue-3">
-                    Video
-                  </h3>
-                </div>
+                <Video width={24} height={24} />
+                [ Video ]
               </a>
             </div>
           )

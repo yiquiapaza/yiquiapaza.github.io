@@ -12,15 +12,9 @@ import image6 from '@assets/publications/6.png';
 const images = [image6, image5, image4, image3, image2, image1];
 ---
 
-<!--
-<Layout
-  title="Yhonatan|Publications"
-  page="publications"
-  transition:animate="slide"
->
--->
-<div class="col-span-8 col-start-3">
-  <h1 id="publications">Publications</h1>
+<div class="md:col-span-6 md:col-start-4 col-span-10 col-start-2">
+  <h1 class="text-left text-4xl font-alegreya-semi-bold-italic text-primary pt-10 pb-10"
+      id="publications">Publications</h1>
   <section class="font-montserrat-regular">
     {
       ListPublications.map((publication, index) => (
@@ -35,11 +29,9 @@ const images = [image6, image5, image4, image3, image2, image1];
           pdf={publication.pdf}
           alt={publication.alt}
           video={publication.video}
+          acronym={publication.acronym}
         />
       ))
     }
   </section>
 </div>
-<!--
-</Layout>
--->

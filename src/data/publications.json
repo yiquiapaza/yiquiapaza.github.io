@@ -1,7 +1,7 @@
 [
 	{
 		"title": "DeAR: Combining Desktop and Augmented Reality for Visual Data Analysis",
-		"event": "Symposium on Virtual and Augmented Reality - SVR",
+		"event": "Symposium on Virtual and Augmented Reality",
 		"authors": ["Yhonatan Iquiapaza,", "Jorge Wagner,", "Luciana Nedel."],
 		"image": "6",
 		"year": 2023,
@@ -9,11 +9,12 @@
 		"url": "",
 		"pdf": "",
 		"video": "https://youtu.be/eOjx9yhL_Uk",
-		"alt": "Combining Desktop and AR for Visual Data Analysis - SVR"
+		"alt": "Combining Desktop and AR for Visual Data Analysis - SVR",
+		"acronym": "SVR"
 	},
 	{
 		"title": "Vibrotactile Data Physicalization: Exploratory Insights for Haptization of Low-resolution Images",
-		"event": "Symposium on Virtual and Augmented Reality - SVR",
+		"event": "Symposium on Virtual and Augmented Reality",
 		"authors": [
 			"Franklin Bastidas,",
 			"Renan Guarese,",
@@ -30,7 +31,8 @@
 		"url": "",
 		"pdf": "",
 		"video": "",
-		"alt": "Vibrotactile Data Physucalization - SVR"
+		"alt": "Vibrotactile Data Physicalization - SVR",
+		"acronym": "SVR"
 	},
 	{
 		"title": "Cooking in the dark: a mixed reality empathy experience for the embodiment of blindness",
@@ -53,11 +55,12 @@
 		"url": "",
 		"pdf": "",
 		"video": "",
-		"alt": "Coking in the Dark - Games Workshop"
+		"alt": "Coking in the Dark - Games Workshop",
+		"acronym": "XR Workshop"
 	},
 	{
 		"title": "Cooking in the Dark: Exploring Spatial Audio as MR Assistive Technology for the Visually Impaired",
-		"event": "Human-Computer-Interaction - INTERACT",
+		"event": "Human-Computer-Interaction",
 		"authors": [
 			"Renan Guarese,",
 			"Franklin Bastidas,",
@@ -76,11 +79,12 @@
 		"url": "",
 		"pdf": "",
 		"video": "https://youtu.be/1jQ0Yg-rgRQ",
-		"alt": "Cooking in the Dark - Interact"
+		"alt": "Cooking in the Dark - Interact",
+		"acronym": "INTERACT"
 	},
 	{
 		"title": "3DUI and the Phantom Limb: multisensory experience for embodiment of amputation",
-		"event": "IEEE Conference on Virtual Reality and 3D User Interfaces - IEEE VR",
+		"event": "IEEE Conference on Virtual Reality and 3D User Interfaces",
 		"authors": [
 			"Aimme Calepso,",
 			"Rafael Valer,",
@@ -95,11 +99,12 @@
 		"url": "",
 		"pdf": "",
 		"video": "https://youtu.be/Cmb8h9V9VVM",
-		"alt": "3DUI and the Phantom Limb - IEEE VR"
+		"alt": "3DUI and the Phantom Limb - IEEE VR",
+		"acronym": "IEEE VR"
 	},
 	{
 		"title": "E-mpathy and the Phantom Limb Sensation: A Multisensory Experience for Embodiment of Amputation",
-		"event": "Proceedings of the XChange Reality - XCR",
+		"event": "Proceedings of the XChange Reality",
 		"authors": [
 			"Renan Guarese,",
 			"Victor De Jesus Oliveira,",
@@ -111,10 +116,11 @@
 		],
 		"image": "1",
 		"year": 2020,
-		"doi": "example",
+		"doi": "",
 		"url": "https://www.diva-portal.org/smash/record.jsf?pid=diva2%3A1788304&dswid=-4201",
 		"pdf": "http://ceur-ws.org/Vol-2618/paper5.pdf",
 		"video": "",
-		"alt": "Empathy and the Phantom Limb Sensation - XChange Reality"
+		"alt": "Empathy and the Phantom Limb Sensation - XChange Reality",
+		"acronym": "XCR"
 	}
 ]

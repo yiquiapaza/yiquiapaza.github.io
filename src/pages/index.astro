@@ -13,11 +13,10 @@ interface Props {
   title: string;
   page: string;
 }
-const { title, page } = Astro.props;
 ---
 
 <Layout title="Yhonatan|Home" page="home" transition:animate="slide">
-  <Header headerName={page} />
+  <Header />
   <Photo />
   <Bio />
   <ExtraInformation />
