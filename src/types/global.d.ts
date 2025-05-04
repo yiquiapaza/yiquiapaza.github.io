@@ -11,3 +11,12 @@ export interface publication {
   alt: string;
   acronym: string;
 }
+
+export interface metadata {
+  author: string;
+  title: string;
+  description: string;
+  image: string;
+  url: string;
+  photo: string;
+}
