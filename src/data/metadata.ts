@@ -1,4 +1,4 @@
-import type { metadata } from '../types/global';
+import type { metadata } from '../interfaces/global.ts';
 
 export const projectMetadata: metadata = {
   author: 'Yhonatan Iquiapaza',

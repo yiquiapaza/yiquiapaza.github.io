@@ -20,3 +20,8 @@ export interface metadata {
   url: string;
   photo: string;
 }
+
+export interface link {
+  href: string;
+  text: string;
+}

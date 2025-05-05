@@ -1,4 +1,4 @@
-import type { publication } from '../types/global';
+import type { publication  } from '@interfaces/global';
 
 export const ListPublications: Array<publication> = [
   {
