@@ -1,5 +1,7 @@
 ---
-import { ClientRouter } from 'astro:transitions';
+import { ClientRouter, fade } from 'astro:transitions';
+import { projectMetadata } from '../data/metadata';
+
 import '../styles/global.css';
 
 interface Props {
@@ -9,20 +11,31 @@ interface Props {
 const { title, page } = Astro.props;
 // TODO:
 // [ ] Create a layout for components
-// [ ] Refactor this layout
 //! [ ] Remove fonts that we do not use (some families)
 ---
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="description" content="Astro description" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/x-icon" href="/images/aricon.png" />
+  <!-- SEO -->
+  <meta name="description" content={projectMetadata.description} />
+
+  <!-- OG Meta tags -->
+  <meta property="og:title" content={projectMetadata.title} />
+  <meta property="og:description" content={projectMetadata.description} />
+  <meta property="og:image" content={projectMetadata.image} />
+
+  <link rel="icon" type="image/x-icon" href={projectMetadata.image} />
   <meta name="generator" content={Astro.generator} />
   <title>{title}</title>
   <ClientRouter />
+  <!--<style>-->
+  <!--  @view-transition  {-->
+  <!--      navigation: auto;-->
+  <!--  }-->
+  <!--</style>-->
   <script>
     if (
       localStorage.getItem('color-theme') === 'dark' ||

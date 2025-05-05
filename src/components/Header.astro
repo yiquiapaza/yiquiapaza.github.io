@@ -1,9 +1,15 @@
 ---
-const pathName = new URL(Astro.request.url);
-const currentPath = pathName.pathname.slice(1);
-//TODO:
-// [ ] uncomment in the future, when we have talks and project to put in.
-// [ ] uncomment when we have more publications
+import type { link } from '@interfaces/global';
+const currentPath = Astro.url.pathname;
+
+const links: Array<link> = [
+  { href: '/', text: 'Home' },
+  { href: '/#publications', text: 'Publications' },
+  // { href: '/publications', text: 'Publications'},
+  // { href: '/projects', text: 'Projects'},
+  // { href: '/talks', text: 'Talks'},
+  { href: '/resume', text: 'Resume' }
+];
 ---
 
 <div class="col-span-10 col-start-2 md:col-span-8 md:col-start-3">
@@ -17,85 +23,23 @@ const currentPath = pathName.pathname.slice(1);
         <a href="/">Yhonatan Iquiapaza</a>
       </h1>
       <div
+        transition:name="menu-line"
         class="space-x-4 text-left py-10 text-base md:w-auto md:pl-50 md:text-2xl"
       >
-        <a
-          href="/"
-          class:list={[
-            'font-montserrat-regular',
-            currentPath === ''
-              ? 'font-montserrat-semi-bold underline underline-offset-8'
-              : ''
-          ]}
-        >
-          Home</a
-        >
-        <a
-          href="/#publications"
-          class="font-montserrat-regular"
-        >
-          Publications
-        </a>
-        <!--<a-->
-        <!--  href="/publications"-->
-        <!--  class:list={[-->
-        <!--    "dark:text-dark-accessible-text-2 font-poppinsRegular text-accessible-text-blue-2",-->
-        <!--    currentPath === "publications" || currentPath === "publications/"-->
-        <!--      ? "font-bold text-accessible-text-blue-1 underline underline-offset-8 dark:text-dark-accessible-text-blue-1"-->
-        <!--      : "",-->
-        <!--  ]}-->
-        <!--&gt;-->
-        <!--  Publications</a-->
+        {
+          links.map(({ href, text }) => (
+            <a
+              href={href}
+              class:list={[
+                'font-montserrat-regular',
+                { 'font-montserrat-semi-bold underline underline-offset-8': currentPath === href }]}
+            >
+              {text}
+            </a>
+          ))
+        }
 
-        <!--&gt;-->
-
-        <!--<a-->
-        <!--  href="/projects"-->
-        <!--  class:list={[-->
-        <!--    "dark:text-dark-accessible-text-2 font-poppinsRegular text-accessible-text-blue-2",-->
-        <!--    currentPath === "projects" || currentPath === "projects/"-->
-        <!--      ? "font-bold text-accessible-text-blue-1 underline underline-offset-8 dark:text-dark-accessible-text-blue-1"-->
-        <!--      : "",-->
-        <!--  ]}-->
-        <!--&gt;-->
-        <!--  Projects</a-->
-        <!--&gt;-->
-        <!--<a-->
-        <!--  href="/talks"-->
-        <!--  class:list={[-->
-        <!--    "dark:text-dark-accessible-text-2 font-poppinsRegular text-accessible-text-blue-2",-->
-        <!--    currentPath === "talks" || currentPath === "talks/"-->
-        <!--      ? "font-bold text-accessible-text-blue-1 underline underline-offset-8 dark:text-dark-accessible-text-blue-1"-->
-        <!--      : "",-->
-        <!--  ]}-->
-        <!--&gt;-->
-        <!--  Talks</a-->
-        <!--&gt;-->
-        <a
-          href="/resume"
-          class:list={[
-            'dark:text-dark-accessible-text-2 font-montserrat-regular',
-            currentPath === 'resume' || currentPath === 'resume/'
-              ? 'font-montserrat-semi-bold underline underline-offset-8'
-              : ''
-          ]}
-        >
-          Resume</a
-        >
       </div>
     </div>
   </nav>
 </div>
-<script>
-  const headerNames: NodeListOf<HTMLAnchorElement> =
-    document.querySelectorAll('nav div div a');
-  headerNames.forEach((headerName) => {
-    headerName.classList.remove('active');
-    const currentPath = window.location.pathname.slice(1);
-    const hrefArray = headerName.href.split('/');
-    const thisPath = hrefArray[hrefArray.length - 1];
-    if (currentPath === thisPath) {
-      headerName.classList.add('active');
-    }
-  });
-</script>
