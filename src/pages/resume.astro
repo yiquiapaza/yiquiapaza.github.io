@@ -1,4 +1,5 @@
 ---
+import { ListPublications } from '@data/publications';
 import Header from '@components/Header.astro';
 import Footer from '@components/Footer.astro';
 import ResumeHeader from '@components/ResumeHeader.astro';
@@ -17,7 +18,8 @@ import Layout from '@layouts/Layout.astro';
     </div>
     <div class="flex flex-row">
       <div class="w-3/4">
-        <p class="text-xl font-alegreya-semi-bold-italic pl-5">Paris-Saclay University (UPSaclay)</p>
+        <p class="text-xl font-alegreya-semi-bold-italic pl-5">Paris-Saclay
+          University (UPSaclay)</p>
         <p class="font-montserrat-light pl-6">PhD. Student</p>
         <p class="text-xl font-alegreya-semi-bold-italic pl-5">Federal
           University of
@@ -72,6 +74,19 @@ import Layout from '@layouts/Layout.astro';
     <div
       class="text-xl md:text-3xl font-alegreya-semi-bold-italic text-primary border-b-3">
       📚 Publications
+    </div>
+    <div>
+      {
+        ListPublications.map(({ title, event, doi, year, acronym, pdf }) => (
+          <p class="pl-5 text-xl font-alegreya-semi-bold-italic">{title}</p>
+          <p class="pl-6 font-alegreya-italic">{event}, {year}. {acronym}</p>
+
+          <a href={doi} target="_blank"
+             class="font-montserrat-light pl-6">{doi}</a>
+          <a href={pdf} target="_blank"
+             class="font-montserrat-light">{pdf}</a>
+        ))
+      }
     </div>
   </div>
 
