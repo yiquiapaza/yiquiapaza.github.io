@@ -1,18 +1,17 @@
-@import "tailwindcss";
-@import "./fonts.css";
+@import 'tailwindcss';
+@import './fonts.css';
 
 @theme {
-	--font-alegreya-bold: "Alegreya-Bold", "sans-serif";
-	--font-alegreya-italic: "Alegreya-Italic", "sans-serif";
-	--font-alegreya-medium: "Alegreya-Medium", "sans-serif";
-	--font-alegreya-medium-italic: "Alegreya-MediumItalic", "sans-serif";
-	--font-alegreya-regular: "Alegreya-Regular", "sans-serif";
-	--font-alegreya-semi-bold: "Alegreya-SemiBold", "sans-serif";
-	--font-alegreya-semi-bold-italic: "Alegreya-SemiBoldItalic", "sans-serif";
-	--font-montserrat-light: "Montserrat-Light", "sans-serif";
-	--font-montserrat-regular: "Montserrat-Regular", "sans-serif";
-	--font-montserrat-semi-bold: "Montserrat-SemiBold", "sans-serif";
+  --font-alegreya-bold: 'Alegreya-Bold', 'sans-serif';
+  --font-alegreya-italic: 'Alegreya-Italic', 'sans-serif';
+  --font-alegreya-medium: 'Alegreya-Medium', 'sans-serif';
+  --font-alegreya-medium-italic: 'Alegreya-MediumItalic', 'sans-serif';
+  --font-alegreya-regular: 'Alegreya-Regular', 'sans-serif';
+  --font-alegreya-semi-bold: 'Alegreya-SemiBold', 'sans-serif';
+  --font-alegreya-semi-bold-italic: 'Alegreya-SemiBoldItalic', 'sans-serif';
+  --font-montserrat-light: 'Montserrat-Light', 'sans-serif';
+  --font-montserrat-regular: 'Montserrat-Regular', 'sans-serif';
+  --font-montserrat-semi-bold: 'Montserrat-SemiBold', 'sans-serif';
 
-
-	--color-primary: #004F90;
+  --color-primary: #004f90;
 }

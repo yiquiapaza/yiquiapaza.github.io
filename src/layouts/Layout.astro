@@ -1,60 +1,61 @@
 ---
-import { ClientRouter, fade } from 'astro:transitions';
-import { projectMetadata } from '../data/metadata';
+import { ClientRouter, fade } from 'astro:transitions'
+import { projectMetadata } from '../data/metadata'
 
-import '../styles/global.css';
+import '../styles/global.css'
 
 interface Props {
-  title: string;
-  page: string;
+  title: string
+  page: string
 }
-const { title, page } = Astro.props;
+const { title, page } = Astro.props
 // TODO:
 // [ ] Create a layout for components
 //! [ ] Remove fonts that we do not use (some families)
 ---
+
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- SEO -->
-  <meta name="description" content={projectMetadata.description} />
+    <!-- SEO -->
+    <meta name="description" content={projectMetadata.description} />
 
-  <!-- OG Meta tags -->
-  <meta property="og:title" content={projectMetadata.title} />
-  <meta property="og:description" content={projectMetadata.description} />
-  <meta property="og:image" content={projectMetadata.image} />
+    <!-- OG Meta tags -->
+    <meta property="og:title" content={projectMetadata.title} />
+    <meta property="og:description" content={projectMetadata.description} />
+    <meta property="og:image" content={projectMetadata.image} />
 
-  <link rel="icon" type="image/x-icon" href={projectMetadata.image} />
-  <meta name="generator" content={Astro.generator} />
-  <title>{title}</title>
-  <ClientRouter />
-  <!--<style>-->
-  <!--  @view-transition  {-->
-  <!--      navigation: auto;-->
-  <!--  }-->
-  <!--</style>-->
-  <script>
-    if (
-      localStorage.getItem('color-theme') === 'dark' ||
-      (!('color-theme' in localStorage) &&
-        window.matchMedia('(prefers-color-theme: dark)').matches)
-    ) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  </script>
-</head>
+    <link rel="icon" type="image/x-icon" href={projectMetadata.image} />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <ClientRouter />
+    <!--<style>-->
+    <!--  @view-transition  {-->
+    <!--      navigation: auto;-->
+    <!--  }-->
+    <!--</style>-->
+    <script>
+      if (
+        localStorage.getItem('color-theme') === 'dark' ||
+        (!('color-theme' in localStorage) &&
+          window.matchMedia('(prefers-color-theme: dark)').matches)
+      ) {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
+    </script>
+  </head>
 
-<body>
-<main class="@container">
-  <div class="grid grid-cols-12 gap-4">
-    <slot />
-  </div>
-  <!--<Toggle />-->
-</main>
-</body>
+  <body>
+    <main class="@container">
+      <div class="grid grid-cols-12 gap-4">
+        <slot />
+      </div>
+      <!--<Toggle />-->
+    </main>
+  </body>
 </html>

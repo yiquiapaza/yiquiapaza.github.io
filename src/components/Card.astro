@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import { Image } from 'astro:assets'
 const {
   title,
   event,
@@ -11,40 +11,27 @@ const {
   year,
   image,
   alt,
-  acronym
-} =
-  Astro.props;
-import DOI from '@assets/logos/academicons--doi.svg';
-import Video from '@assets/logos/mdi--video.svg';
-import PDF from '@assets/logos/mingcute--pdf-fill.svg';
-import Website from '@assets/logos/bitcoin-icons--link-filled.svg';
+  acronym,
+} = Astro.props
+import DOI from '@assets/logos/academicons--doi.svg'
+import Video from '@assets/logos/mdi--video.svg'
+import PDF from '@assets/logos/mingcute--pdf-fill.svg'
+import Website from '@assets/logos/bitcoin-icons--link-filled.svg'
 //! TODO: add cite and abstract buttons using textarea collapse
 ---
 
-<div
-  class="font-montserrat-regular pt-5 pb-5"
->
+<div class="font-montserrat-regular pt-5 pb-5">
   <div
-    class="flex flex-col items-center md:flex md:flex-row border-b-1 border-primary">
+    class="flex flex-col items-center md:flex md:flex-row border-b-1 border-primary"
+  >
     <div class="md:w-96">
-      {
-        (
-          <Image
-            src={image}
-            alt={alt}
-          />
-        )
-      }
+      {(<Image src={image} alt={alt} />)}
     </div>
     <div class="p-2 md:p-8 w-full">
-      <div
-        class="text-sm uppercase font-montserrat-semi-bold"
-      >
+      <div class="text-sm uppercase font-montserrat-semi-bold">
         {title}
       </div>
-      <div
-        class="mt-1 block text-sm leading-tight"
-      >
+      <div class="mt-1 block text-sm leading-tight">
         {
           authors.map((author: string) =>
             author === 'Yhonatan Iquiapaza,' ? (
@@ -53,69 +40,65 @@ import Website from '@assets/logos/bitcoin-icons--link-filled.svg';
               </span>
             ) : (
               <span class="pr-1">{author}</span>
-            )
+            ),
           )
         }
       </div>
-      <div
-        class="mt-1 font-alegreya-medium-italic content-center"
-      >{
-        acronym === 'SVR' && (<span
-          class="bg-green-500 text-white pl-2 pr-2 rounded-2xl font-montserrat-semi-bold text-sm">{acronym}</span>) ||
-        acronym === 'XCR' && (<span
-          class="bg-rose-500 text-white pl-2 pr-2 rounded-2xl font-montserrat-semi-bold text-sm">{acronym}</span>) ||
-        acronym === 'XR Workshop' && (<span
-          class="bg-amber-500 text-white pl-2 pr-2 rounded-2xl font-montserrat-semi-bold text-sm">{acronym}</span>) ||
-        acronym === 'INTERACT' && (<span
-          class="bg-sky-500 text-white pl-2 pr-2 rounded-2xl font-montserrat-semi-bold text-sm">{acronym}</span>) ||
-        acronym === 'IEEE VR' && (<span
-          class="bg-purple-500 text-white pl-2 pr-2 rounded-2xl font-montserrat-semi-bold text-sm">{acronym}</span>)
-      }
+      <div class="mt-1 font-alegreya-medium-italic content-center">
+        {
+          (acronym === 'SVR' && (
+            <span class="bg-green-500 text-white pl-2 pr-2 rounded-2xl font-montserrat-semi-bold text-sm">
+              {acronym}
+            </span>
+          )) ||
+            (acronym === 'XCR' && (
+              <span class="bg-rose-500 text-white pl-2 pr-2 rounded-2xl font-montserrat-semi-bold text-sm">
+                {acronym}
+              </span>
+            )) ||
+            (acronym === 'XR Workshop' && (
+              <span class="bg-amber-500 text-white pl-2 pr-2 rounded-2xl font-montserrat-semi-bold text-sm">
+                {acronym}
+              </span>
+            )) ||
+            (acronym === 'INTERACT' && (
+              <span class="bg-sky-500 text-white pl-2 pr-2 rounded-2xl font-montserrat-semi-bold text-sm">
+                {acronym}
+              </span>
+            )) ||
+            (acronym === 'IEEE VR' && (
+              <span class="bg-purple-500 text-white pl-2 pr-2 rounded-2xl font-montserrat-semi-bold text-sm">
+                {acronym}
+              </span>
+            ))
+        }
         <span class="pl-2">{event}</span> - {year}
       </div>
       <div class="flex flex-row pt-3">
         {
           doi && (
-            <div
-              class="p-2 hover:bg-orange-100 hover:rounded-full hover:text-primary">
-              <a
-                href={doi}
-                target="_blank"
-                class="flex flex-row"
-              >
-                <DOI width={24} height={24} />
-                [ Link ]
+            <div class="p-2 hover:bg-orange-100 hover:rounded-full hover:text-primary">
+              <a href={doi} target="_blank" class="flex flex-row">
+                <DOI width={24} height={24} />[ Link ]
               </a>
             </div>
           )
         }
         {
           pdf && (
-            <div
-              class="p-2 hover:bg-orange-100 hover:rounded-full hover:text-primary">
-              <a
-                href={pdf}
-                target="_blank"
-                class="flex flex-row"
-              >
-                <PDF width={24} height={24} />
-                [ PDF ]
+            <div class="p-2 hover:bg-orange-100 hover:rounded-full hover:text-primary">
+              <a href={pdf} target="_blank" class="flex flex-row">
+                <PDF width={24} height={24} />[ PDF ]
               </a>
             </div>
           )
         }
         {
           url && (
-            <div
-              class="p-2 hover:bg-emerald-100 hover:rounded-full hover:text-primary">
-              <a
-                href={url}
-                target="_blank"
-                class="flex flex-row"
-              >
+            <div class="p-2 hover:bg-emerald-100 hover:rounded-full hover:text-primary">
+              <a href={url} target="_blank" class="flex flex-row">
                 <div class="flex justify-center">
-                  <Website width={24} height={24} />
-                  [ URL ]
+                  <Website width={24} height={24} />[ URL ]
                 </div>
               </a>
             </div>
@@ -123,15 +106,9 @@ import Website from '@assets/logos/bitcoin-icons--link-filled.svg';
         }
         {
           video && (
-            <div
-              class="p-2 hover:bg-red-100 hover:rounded-full hover:text-primary">
-              <a
-                href={video}
-                target="_blank"
-                class="flex flex-row"
-              >
-                <Video width={24} height={24} />
-                [ Video ]
+            <div class="p-2 hover:bg-red-100 hover:rounded-full hover:text-primary">
+              <a href={video} target="_blank" class="flex flex-row">
+                <Video width={24} height={24} />[ Video ]
               </a>
             </div>
           )

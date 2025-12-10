@@ -45,31 +45,31 @@
 <script>
   const themeToggle = document.querySelector(
     '.theme-switch input[type="checkbox"]',
-  ) as HTMLInputElement;
+  ) as HTMLInputElement
   // True is light and False is dark
-  function switchTheme(e : any) {
-    if (localStorage.getItem("color-theme")) {
+  function switchTheme(e: any) {
+    if (localStorage.getItem('color-theme')) {
       if (e.target.checked) {
-        document.documentElement.classList.remove("dark");
-        localStorage.setItem("color-theme", "light");
-        themeToggle.checked = true;
+        document.documentElement.classList.remove('dark')
+        localStorage.setItem('color-theme', 'light')
+        themeToggle.checked = true
       } else {
-        document.documentElement.classList.add("dark");
-        localStorage.setItem("color-theme", "dark");
-        themeToggle.checked = false;
+        document.documentElement.classList.add('dark')
+        localStorage.setItem('color-theme', 'dark')
+        themeToggle.checked = false
       }
     } else {
-      if (document.documentElement.classList.contains("dark")) {
-        document.documentElement.classList.remove("dark");
-        localStorage.setItem("color-theme", "light");
-        themeToggle.checked = true;
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark')
+        localStorage.setItem('color-theme', 'light')
+        themeToggle.checked = true
       } else {
-        document.documentElement.classList.add("dark");
-        localStorage.setItem("color-theme", "dark");
-        themeToggle.checked = false;
+        document.documentElement.classList.add('dark')
+        localStorage.setItem('color-theme', 'dark')
+        themeToggle.checked = false
       }
     }
   }
 
-  themeToggle.addEventListener("change", switchTheme, false);
+  themeToggle.addEventListener('change', switchTheme, false)
 </script>
